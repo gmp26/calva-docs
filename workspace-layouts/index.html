@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Workspace layouts - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Workspace layouts";
+    var mkdocs_page_input_path = "workspace-layouts.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Workspace layouts</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#one-folder-two-windows">One Folder - Two Windows?</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Etcetera &raquo;</li>
+        
+      
+    
+    <li>Workspace layouts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="workspace-layouts">Workspace layouts</h1>
+<p>Project directory layouts can vary quite a lot. From the ”template” projects where the Clojure project files are at the root, to, well, let's just say that the project files are not always at the root. And sometimes there is more than one project.</p>
+<p>Calva only really supports working with one project at a time per VS Code window. Here's a short guide for some different setups:</p>
+<ol>
+<li><strong>You have one project in the workspace, the project files are in there somewhere.</strong><ul>
+<li>Use a regular VS Code ”folder window” or a Workspace proper, both will totally work.</li>
+</ul>
+</li>
+<li><strong>You have more than one project in the repository, but only really work with one at a tine.</strong><ul>
+<li>Use a Workplace proper and add the different project directories as seperate Workplace Folders.</li>
+<li>You can only jack-in/connect to one project at a time.</li>
+</ul>
+</li>
+<li><strong>You have more than one project in the repository, and need to work with them in parallell.</strong><ul>
+<li>Open each project you want to work with in a separate VS Code window.</li>
+</ul>
+</li>
+</ol>
+<h2 id="one-folder-two-windows">One Folder - Two Windows?</h2>
+<p>As is mentioned in the <a href="../jack-in-guide/">Calva Jack-In Guide</a>, if you have a full stack project using a Clojure backend and a shadow-cljs frontend, you will need to open the same project in two separate VS Code windows, one for the backend and one for the frontend. This is how you can do that:</p>
+<ol>
+<li>Open a new VS Code window.</li>
+<li>Select <em>File-&gt;Add Folder to Workspace...</em>. Save the workspace as, say, <code>Server.code-workspace</code>.</li>
+<li>Open a new VS Code window.</li>
+<li>Select <em>File-&gt;Add Folder to Workspace...</em>. Save the workspace as, say, <code>Client.code-workspace</code>.</li>
+</ol>
+<p>Now, whenever you want to Jack-in to the backend and/or frontend, do it from the <strong>Server</strong> and/or <strong>Client</strong> workspace, respectively.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../quirks/" class="btn btn-neutral float-right" title="Quirks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../luminus/" class="btn btn-neutral" title="How to Use Calva with Luminus"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../luminus/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../quirks/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

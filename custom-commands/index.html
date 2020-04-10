@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Running Custom REPL Commands - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Running Custom REPL Commands";
+    var mkdocs_page_input_path = "custom-commands.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Running Custom REPL Commands</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Customizing Calva &raquo;</li>
+        
+      
+    
+    <li>Running Custom REPL Commands</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="running-custom-repl-commands">Running Custom REPL Commands</h1>
+<p>Calva supports configuration of custom command snippets that you can execute in the REPL at will. If your workflow has you repeatedly evaluate a particular piece of code, you can use the setting <code>calva.customREPLCommandSnippets</code> to configure it and then use the command <strong>Run Custom REPL Command</strong> to access it. The command will give you a menu with the snippets you have configured.</p>
+<p>The <code>calva.customREPLCommandSnippets</code> is an object/dictionary with the following fields:</p>
+<ul>
+<li><code>name</code>: The name of the snippet as it will appear in the picker menu</li>
+<li><code>snippet</code>: The code that will be evaluated</li>
+<li><code>ns</code>: (optional) Namespace to evaluate the command in. If omitted the command will be executed in the namespace of the current editor.</li>
+<li><code>replType</code>: Which REPL window to use for the evaluation. Either <code>"clj"</code> or <code>"cljs"</code></li>
+</ul>
+<p>E.g. with these settings:</p>
+<pre><code>    &quot;calva.customREPLCommandSnippets&quot;: [
+        {
+            &quot;name&quot;: &quot;Foo&quot;,
+            &quot;snippet&quot;: &quot;(println :foo)&quot;,
+            &quot;ns&quot;: &quot;acme.test.foo-test&quot;,
+            &quot;repl&quot;: &quot;cljs&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Bar&quot;,
+            &quot;snippet&quot;: &quot;(println :bar)&quot;,
+            &quot;ns&quot;: &quot;acme.test.bar-test&quot;,
+            &quot;repl&quot;: &quot;clj&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Refresh&quot;,
+            &quot;snippet&quot;: &quot;(refresh)&quot;,
+            &quot;repl&quot;: &quot;clj&quot;
+        }
+    ]
+</code></pre>
+
+<p>You will get this menu.</p>
+<p><img width="601" alt="image" src="https://user-images.githubusercontent.com/30010/66232206-9bab3280-e6e8-11e9-872b-22fd50baef25.png"></p>
+<p>The items are numbered for you so that you can choose them in predictable way. The default keyboard shortcut for the command is <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd>, <kbd>.</kbd>. Which means that to execute the <strong>Refresh</strong> command, <code>(refresh)</code>, in the <code>clj</code> REPL, you could do:</p>
+<p><kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>c</kbd>, <kbd>.</kbd>, <kbd>3</kbd>, <kbd>ENTER</kbd>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rebl/" class="btn btn-neutral float-right" title="How to Use Calva and REBL Together">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../connect-sequences/" class="btn btn-neutral" title="REPL Jack-in and Connection Sequences"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../connect-sequences/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rebl/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

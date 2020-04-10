@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Connect Calva to Your Project - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Connect Calva to Your Project";
+    var mkdocs_page_input_path = "connect.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Connect Calva to Your Project</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#jack-in-let-calva-start-the-repl-for-you">Jack-in: Let Calva start the REPL for you</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#aliases-profiles-builds">Aliases, profiles, builds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#customizing-jack-in">Customizing Jack-in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connecting-wo-jack-in">Connecting w/o Jack-in</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Getting Started &raquo;</li>
+        
+      
+    
+    <li>Connect Calva to Your Project</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="connect-calva-to-your-project">Connect Calva to Your Project</h1>
+<p>The recommended way is to:</p>
+<h2 id="jack-in-let-calva-start-the-repl-for-you">Jack-in: Let Calva start the REPL for you</h2>
+<p>This way Calva can make sure it is started with the dependencies needed for a working Clojure and/or ClojureScript session. This is often referred to as <strong>Jack in</strong> (because that is what it is called in CIDER).</p>
+<p>Jack-in supports both CLJ and for CLJS, and has built-in configurations for <strong>Leiningen</strong>, <strong>Clojure CLI</strong>, and <strong>shadow-cljs</strong> projects, as well as for the CLJS repl types: <strong>Figwheel Main</strong>, <strong>lein-figwheel</strong> (legacy Figwheel), <strong>shadow-cljs</strong>, and Nashorn. Using jack-in provides your development environment with all the dependencies you need for Calva to work.</p>
+<p>It works like so:</p>
+<ol>
+<li>Open your project root directory in VS Code.</li>
+<li>Issue the command <strong>Start a Project REPL and Connect</strong>: <code>ctrl+alt+c ctrl+alt+j</code>.</li>
+<li>Answer the quick-pick prompts telling Calva about project types and what profiles to start.</li>
+</ol>
+<p>See also: <a href="../workspace-layouts/">Workspace Layouts</a></p>
+<h3 id="aliases-profiles-builds">Aliases, profiles, builds</h3>
+<p>When Jack-in starts it will depend on the project type, and whether ClojureScript is involved or not, and if it is, what kind of ClojureScript project, what will happen next. Calva will analyze the project files and will then give you prompts with selections based on what is found there.</p>
+<p>You will need some basic knowledge about the project and the project type terminologies to answer the prompts.</p>
+<p>There are ways to tell Calva the answers to these prompts beforehand, so that Jack-in can be a zero-prompting command. Read on.</p>
+<h3 id="customizing-jack-in">Customizing Jack-in</h3>
+<p>The main mechanism for customizing your Jack-in, including automating menu selections, and custom CLJS REPL types is <a href="../connect-sequences/">Custom Connect Sequences</a>.</p>
+<p>There are also these settings:
+* <code>calva.jackInEnv</code>: An object with environment variables that will be added to the environment of the Jack-in process.
+* <code>calva.myCljAliases</code>: An array of <code>deps.edn</code> aliases not found in the project file. Use this to launch your REPL using your user defined aliases.
+* <code>calva.myLeinProfiles</code>: An array of Leiningen profiles not found in <code>project.clj</code>. Use adding your user defined profiles to Jack-in launch of the REPL.
+* <code>calva.openBrowserWhenFigwheelStarted</code>: <em>For Legacy Figwheel only.</em> A boolean controlling if Calva should automatically launch your ClojureScript app, once it is compiled by Figwheel. Defaults to <code>true</code>.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>I'm sure there are troubles we should mention here...</p>
+<h2 id="connecting-wo-jack-in">Connecting w/o Jack-in</h2>
+<p>If, for whatever reasons, you can't use Jack-in with your project (possibly because the REPL is started as part of some other job) all is not lost. Old fashioned <strong>Connect to a running REPL</strong> is still there for you. For all features to work in Calva while connecting to a running REPL, your environment needs to have REPL related dependencies set up.</p>
+<p>However, just as before it can be tricky to get the dependencies right. Consider using <strong>Jack in</strong> to inform yourself on how to start your REPL to Calva's satisfaction. When you use Jack in, Calva starts a VS Code task for it and the command line used is displayed in the terminal pane used to handle the task. Reading that command line tells you what dependencies are needed for your project.</p>
+<p>Even better: Copying that command line gives you the command to start the REPL with the correct dependencies.</p>
+<p>All this said, I still recommend you challenge the conclusion that you can't use Jack-in.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../try-first/" class="btn btn-neutral float-right" title="Something to Try First (After Connecting)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../try-first/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>How to Use Calva with Luminus - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to Use Calva with Luminus";
+    var mkdocs_page_input_path = "luminus.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How to Use Calva with Luminus</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#server-shadow-cljs">Server + shadow-cljs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#server-only">Server Only</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#server-figwheel">Server + Figwheel</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#etcetera">Etcetera</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Using Calva with X &raquo;</li>
+        
+      
+    
+    <li>How to Use Calva with Luminus</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-to-use-calva-with-luminus">How to Use Calva with Luminus</h1>
+<p><a href="https://luminusweb.com">Luminus</a> is a powerful and versitle Leiningen template for creating web development projects. It comes with built in configuration for making it easy to use Calva as your Clojure(Script) editor.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0zaGtbc-5oc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr />
+<h2 id="server-shadow-cljs">Server + shadow-cljs</h2>
+<p>Basically this is the same wokflow as with <strong>Server only</strong>. Behind the scenes there is more happening, though. Such as the ClojureScript app being built and the CLJS REPL connected once the web app is running.</p>
+<ol>
+<li>If you haven't created the project yet, create a new shadow-cljs Luminus project. E.g.:
+    <code>sh
+    $ lein new luminus my-luminus-shadow +reagent +shadow-cljs</code></li>
+<li>This creates the folder <code>my-luminus-shadow</code>. Open it in VS Code:
+    <code>sh
+    $ code my-luminus-shadow</code></li>
+<li>Use the Calva command <strong>Start a Project REPL and Connect (aka Jack-in)</strong>: <code>ctrl+alt+c ctrl+alt+j</code></li>
+<li>Select to start <strong>Server + Client – my-luminus-shadow</strong>, and wait for the <em>Terminal</em> <strong>Calva Jack-in</strong> output to say <code>[:app] Build completed.</code></li>
+<li>Open <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in your web browser and start hacking.</li>
+</ol>
+<blockquote>
+<p>Note: Currently Calva has troubles following the app-start with shadow-cljs, so Calva will report <code>Jack-in done.</code> in the <code>Calva says</code> output before shadow-cljs is actually done building the app. If you open the app page at that stage, you will see a message to ” Please run <code>lein shadow watch app</code>”. Rest assured that <em>this is already underway.</em> Follow the Jack-in process in the <em>Terminal</em> tab in VS Code for the message that the app is built, <em>then</em> reload the app page in the web browser.</p>
+</blockquote>
+<h2 id="server-only">Server Only</h2>
+<p>The workflow here is really just: Jack-in and start hacking. The first time it involves these steps, however:</p>
+<ol>
+<li>If you haven't created the project yet, create a new server only Luminus project. For a all-defaults setup it is like so:
+    <code>sh
+    $ lein new luminus my-luminus-server</code></li>
+<li>This creates the folder <code>my-luminus-server</code>. Open it in VS Code:
+    <code>sh
+    $ code my-luminus-server</code></li>
+<li>Use the Calva command <strong>Start a Project REPL and Connect (aka Jack-in)</strong>: <code>ctrl+alt+c ctrl+alt+j</code> and wait for the <strong>Calva says</strong> output to say <code>Jack-in done.</code></li>
+<li>Open <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in your web browser and start hacking.</li>
+</ol>
+<h2 id="server-figwheel">Server + Figwheel</h2>
+<p><em>This is Legacy Fighwheel (lein-figwheel), so the recommendation is to use the shadow-cljs setup instead.</em> As with the server only, the workflow here is really just: Jack-in and start hacking. The first time it involves these steps:</p>
+<ol>
+<li>If you haven't created the project yet, create a new server only Luminus project. E.g.:
+    <code>sh
+    $ lein new luminus my-fw +reagent</code></li>
+<li>This creates the folder <code>my-fw</code>. Open it in VS Code:
+    <code>sh
+    $ code my-fw</code></li>
+<li>Use the Calva command <strong>Start a Project REPL and Connect (aka Jack-in)</strong>: <code>ctrl+alt+c ctrl+alt+j</code>, select <strong>Server + Client - my-fw</strong> in the <em>Project type</em> picker menu, and wait for the web app to pop open in your web browser.</li>
+<li>Start hacking.</li>
+</ol>
+<p>If you rather open the web app yourself, open <code>.vscode/settings.json</code> and change <code>"shouldOpenUrl"</code> to <code>false</code> in the preconfigured Calva connect sequence. Calva will then print the URL <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in the output, so that you can click it open.</p>
+<h2 id="etcetera">Etcetera</h2>
+<p>You will have three Calva <em>Custom Command Snippets</em> configured. Invoke them by issuing the <strong>Run Custom REPL Command</strong>, <code>ctrl+alt+c .</code> (that's a dot). The commands control the Luminus server:</p>
+<ol>
+<li><code>Start &lt;project&gt; Server</code></li>
+<li><code>Stop &lt;project&gt; Server</code></li>
+<li><code>Restart &lt;project&gt; Server</code></li>
+</ol>
+<p>When used, Calva will open its REPL window and excute the command, if it is not already opened. You can close this window if you prefer to use the REPL directly from the Clojure files.</p>
+<p>Calva also opens the REPL window, and starts the Luminus server, as part of the Jack-in process.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../workspace-layouts/" class="btn btn-neutral float-right" title="Workspace layouts">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../remote-development/" class="btn btn-neutral" title="Using Calva with Remote Development"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../remote-development/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../workspace-layouts/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

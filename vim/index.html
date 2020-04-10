@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Calva and the VIM Extension - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Calva and the VIM Extension";
+    var mkdocs_page_input_path = "vim.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Calva and the VIM Extension</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#selection-commands">Selection commands</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-bindings">Key bindings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#expand-selection">Expand selection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-esc-key">The esc key</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#remap-calvas-clearinlineresults">Remap Calva's clearInlineResults</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#remap-vims-insert-mode">Remap Vim's Insert Mode</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#no-vim-mode-for-the-repl-window">No Vim mode for the REPL Window</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Using Calva with X &raquo;</li>
+        
+      
+    
+    <li>Calva and the VIM Extension</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="calva-and-the-vim-extension">Calva and the VIM Extension</h1>
+<p>First thing first. The <a href="https://github.com/VSCodeVim/Vim">VIM Extension</a> and Calva has some friction between them. Expect it to be a bit painful.</p>
+<h2 id="selection-commands">Selection commands</h2>
+<p>Calva's various structural selection commands <a href="https://github.com/BetterThanTomorrow/calva/issues/297">do not put VIM into VISUAL mode</a>. This is true for many <a href="https://github.com/VSCodeVim/Vim/issues/2224">VS Code selection scenarios</a> too, so it is not really Calva's fault, but it will be problematic for VIM Extension Calva users, regardless.</p>
+<h2 id="key-bindings">Key bindings</h2>
+<p>In general Calva's default key bindings are not very VI-ish. <strong>This is a call for someone to share their VIM re-mappings</strong>.</p>
+<h3 id="expand-selection">Expand selection</h3>
+<p>Calva binds <strong>expand selection</strong> to <code>ctrl+w</code>. This conflicts with the VIM Extension's default mapping of window splitting shortcuts. You'll need to remap it either with Calva or with the VIM Extension.</p>
+<h3 id="the-esc-key">The <code>esc</code> key</h3>
+<p>Calva binds the <code>esc</code> key to dismiss the display of inline results. This gets into conflict with any <code>vi</code> coding since <code>esc</code> then is used to go back to command mode. You can either fix Calva's default keybinding or the VIM extension.</p>
+<p>Alternatively, you can use the native Vim command <code>Ctrl + [</code> to escape and get back to command mode. Rebinding your keyboard's CapsLock key to Control may make this even easier.</p>
+<h4 id="remap-calvas-clearinlineresults">Remap Calva's <code>clearInlineResults</code></h4>
+<ul>
+<li>Open the Keyboard Shortcuts JSON file from the Command Palette</li>
+<li>Disable <code>clearInlineResults</code> and remap the command e.g.</li>
+</ul>
+<pre><code>// Place your key bindings in this file to override the defaults
+[
+  {
+    &quot;key&quot;: &quot;escape&quot;,
+    &quot;command&quot;: &quot;-calva.clearInlineResults&quot;
+  },
+  {
+    &quot;key&quot;: &quot;shift+escape&quot;,
+    &quot;command&quot;: &quot;calva.clearInlineResults&quot;,
+    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; !editorHasMultipleSelections &amp;&amp; !editorReadOnly &amp;&amp; !hasOtherSuggestions &amp;&amp; !suggestWidgetVisible &amp;&amp; editorLangId == 'clojure'&quot;
+  },
+]
+</code></pre>
+
+<p>If you run into issues, refer to the commands in the default Keyboard Shortcuts JSON file.</p>
+<h4 id="remap-vims-insert-mode">Remap Vim's Insert Mode</h4>
+<p>Remap vim's insert mode keybinding to go into command mode by adding the following to your user settings:</p>
+<pre><code class="json">&quot;vim.insertModeKeyBindings&quot;: [
+    {
+        &quot;before&quot;: [&quot;j&quot;, &quot;k&quot;],
+        &quot;after&quot;: [&quot;&lt;esc&gt;&quot;]
+    }
+]
+</code></pre>
+
+<p>(Change <code>before</code> to whatever keybinding you are comfortable with!)</p>
+<h2 id="no-vim-mode-for-the-repl-window">No Vim mode for the REPL Window</h2>
+<p>This is not likely to be fixed anytime soon. (Because, a <strong>lot</strong> of work.)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../wsl/" class="btn btn-neutral float-right" title="Calva ❤️ WSL">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../rebl/" class="btn btn-neutral" title="How to Use Calva and REBL Together"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../rebl/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../wsl/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

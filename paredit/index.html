@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Paredit – a Visual Guide - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Paredit \u2013 a Visual Guide";
+    var mkdocs_page_input_path = "paredit.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Paredit – a Visual Guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-paredit">What is Paredit?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#strict-mode">Strict Mode</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#strings-are-not-lists-but-anyway">Strings are not Lists, but Anyway...</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#navigating">Navigating</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#selecting">Selecting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#editing">Editing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#about-the-keyboard-shortcuts">About the Keyboard Shortcuts</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Features &raquo;</li>
+        
+      
+    
+    <li>Paredit – a Visual Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="paredit-a-visual-guide">Paredit – a Visual Guide</h1>
+<p>Structural editing and navigation for Clojure.</p>
+<h2 id="what-is-paredit">What is Paredit?</h2>
+<p>Calva Paredit helps you navigate, select and edit Clojure code in a structural way. LISP isn't line or character oriented, it is based around <a href="https://en.wikipedia.org/wiki/S-expression">S-expressions</a>, a.k.a forms. We strongly recommend that you take advantage of the structural nature of Clojure, and have therefore put a lot of work into making Calva Paredit extra awesome.</p>
+<p>If you are new to Paredit, consider starting with learning the <strong>Slurp Forward</strong> (pull in the next form into this form) and <strong>Barf Forward</strong> (push the last form out of this form). It will take you quite far.</p>
+<h2 id="strict-mode">Strict Mode</h2>
+<p>To protect the integrity of your code, <strong>Strict mode</strong> is enabled by default.</p>
+<table>
+<thead>
+<tr>
+<th>Strict mode keybinding</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>backspace</code></td>
+<td><strong>Delete Backward</strong></td>
+<td>Deletes one character backwards, unless it will unbalance a form. Otherwise moves past the character instead of deleting it. If the list is empty, it will remove both open and close brackets. <br> <img alt="" src="../images/paredit/strict-backspace.gif" /></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td><strong>Delete Forward</strong></td>
+<td>Deletes one character forwards, unless it will unbalance a form. Otherwise moves past the character instead of deleting it. If the list is empty, it is removed. <br> <img alt="" src="../images/paredit/strict-delete.gif" /></td>
+</tr>
+<tr>
+<td><code>alt+backspace</code></td>
+<td><strong>Force Delete Backward</strong></td>
+<td>Deletes one character backwards, even if it will unbalance a form. <br> <img alt="" src="../images/paredit/force-backspace.gif" /></td>
+</tr>
+<tr>
+<td><code>alt+delete</code></td>
+<td><strong>Force Delete Forward</strong></td>
+<td>Deletes one character forwards, even if it will unbalance a form. <br> <img alt="" src="../images/paredit/force-delete.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p><em>Disable at your own peril.</em> Strict mode can be toggled on/off using the <strong>Toggle Paredit Mode</strong> command, and there is a status bar indicator telling you:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Indicator</th>
+<th>Paredit Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>[λ]</code></td>
+<td>Strict</td>
+</tr>
+<tr>
+<td align="center"><code>(λ)</code></td>
+<td>Cave Man</td>
+</tr>
+<tr>
+<td align="center"><code>λ</code></td>
+<td>No default key bindings</td>
+</tr>
+</tbody>
+</table>
+<p>Toggle bewteen Strict and Cave Man using: <code>ctrl+alt+p ctrl+alt+m</code></p>
+<h2 id="commands">Commands</h2>
+<p>The Paredit commands sorts into <strong>Navigation</strong>, <strong>Selection</strong>, and <strong>Edit</strong>. As mentioned, <strong>Slurp</strong> and <strong>Barf</strong> are power commands, which go into the editing category. Learning to navigate structurally, using shortcuts, also saves time and adds precision to your editing. It has the double effect that you at the same time learn how to select structurally, because that is the same, just adding the shift key.</p>
+<p>To make the command descriptions a bit clearer, each entry is animated. When you try to figure out what is going on in the GIFs, focus on where the cursor is at the start of the animation loop.</p>
+<h3 id="strings-are-not-lists-but-anyway">Strings are not Lists, but Anyway...</h3>
+<p>In Calva Paredit, strings are treated in much the same way as lists are. Here's an example showing <strong>Slurp</strong> and <strong>Barf</strong>, <strong>Forward/Backward List</strong>, and <strong>Grow Selection</strong>.</p>
+<p><img alt="" src="../images/paredit/string-as-list.gif" /></p>
+<h3 id="navigating">Navigating</h3>
+<p>(Modify these with <code>shift</code> to select rather than move, see below.)</p>
+<table>
+<thead>
+<tr>
+<th>Default keybinding</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ctrl+alt+right</code></td>
+<td><strong>Forward Sexp</strong></td>
+<td>Moves the cursor forward, to the end of the current form. If at the end, moves to the end of the next form. Will not move out of lists.<br> <img alt="" src="../images/paredit/forward-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+left</code></td>
+<td><strong>Backward Sexp</strong></td>
+<td>Moves the cursor backward, to the start of the current form. If at the start, moves to the start of the previous form. Will not move out of lists.<br> <img alt="" src="../images/paredit/backward-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+down</code></td>
+<td><strong>Forward Down Sexp</strong></td>
+<td>Moves the cursor into the following list.<br> <img alt="" src="../images/paredit/forward-down-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+up</code></td>
+<td><strong>Backward Down Sexp</strong></td>
+<td>Moves the cursor into the preceding list.<br> <img alt="" src="../images/paredit/backward-down-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+down</code></td>
+<td><strong>Forward Up Sexp</strong></td>
+<td>Moves the cursor forwards, out of the current list.<br> <img alt="" src="../images/paredit/forward-up-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+up</code></td>
+<td><strong>Backward Up Sexp</strong></td>
+<td>Moves the cursor backwards, out of the current list.<br> <img alt="" src="../images/paredit/backward-up-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+end</code></td>
+<td><strong>Forward to List End/Close</strong></td>
+<td>Moves the cursor forwards, staying within the current list.<br> <img alt="" src="../images/paredit/close-list.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+home</code></td>
+<td><strong>Backward to List Start/Open</strong></td>
+<td>Moves the cursor backwards, staying within the current list.<br> <img alt="" src="../images/paredit/open-list.gif" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="selecting">Selecting</h3>
+<table>
+<thead>
+<tr>
+<th>Default keybinding</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ctrl+w</code></td>
+<td><strong>Expand Selection</strong></td>
+<td>Starts from the cursor and selects the current form. Then will keep expanding to enclosing forms.<br> <img alt="" src="../images/paredit/grow-selection.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+w</code></td>
+<td><strong>Shrink Selection</strong></td>
+<td>Contracts back from an expanded selection performed by any Paredit selection command.<br> <img alt="" src="../images/paredit/shrink-selection.gif" /><br>(In the animation the selection is first grown using a combination of <strong>Grow Selection</strong> and some lateral selection commands, then shrunk all the way back down to no selection.)</td>
+</tr>
+<tr>
+<td><code>ctrl+alt+w space</code></td>
+<td><strong>Select Top Level Form</strong></td>
+<td>Top level in a structural sence. Typically where your<code>(def ...)</code>/<code>(defn ...)</code> type forms. Please note that<code>(comment ...)</code> forms create a new top level. <br> <img alt="" src="../images/paredit/select-top-level-form.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p>The selecting ”versions” of the navigation commands above. They will all grow whatever current selection as far as the <strong>Shrink Selection</strong> command is concerned.</p>
+<table>
+<thead>
+<tr>
+<th>Default keybinding</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ctrl+shift+alt+right</code></td>
+<td><strong>Select Forward Sexp</strong></td>
+<td><img alt="" src="../images/paredit/select-forward-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+alt+left</code></td>
+<td><strong>Select Backward Sexp</strong></td>
+<td><img alt="" src="../images/paredit/select-backward-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+down</code></td>
+<td><strong>Select Forward Down Sexp</strong></td>
+<td><img alt="" src="../images/paredit/select-forward-down-sexp.gif" /> <br>(You probably do not need to select like this, but you can!)</td>
+</tr>
+<tr>
+<td><code>ctrl+shift+alt+up</code></td>
+<td><strong>Select Backward Down Sexp</strong></td>
+<td><img alt="" src="../images/paredit/select-backward-down-sexp.gif" /> <br>(You probably do not need to select like this, but you can!)</td>
+</tr>
+<tr>
+<td><code>ctrl+shift+alt+down</code></td>
+<td><strong>Select Forward Up Sexp</strong></td>
+<td><img alt="" src="../images/paredit/select-forward-up-sexp.gif" /> <br>(You probably do not need to select like this, but you can!)</td>
+</tr>
+<tr>
+<td><code>ctrl+shift+up</code></td>
+<td><strong>Select Backward Up Sexp</strong></td>
+<td><img alt="" src="../images/paredit/select-backward-up-sexp.gif" /> <br>(You probably do not need to select like this, but you can!)</td>
+</tr>
+<tr>
+<td><code>ctrl+shift+end</code></td>
+<td><strong>Select Forward to List End/Close</strong></td>
+<td><img alt="" src="../images/paredit/select-close-list.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+home</code></td>
+<td><strong>Select Backward to List Start/Open</strong></td>
+<td><img alt="" src="../images/paredit/select-open-list.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p>(Earlier versions of Calva had commands for copying, cutting and deleting that corresponded to all movements. This has now been replaced with this selection commands, and you can choose to copy/cut/delete once you have the selection.)</p>
+<h3 id="editing">Editing</h3>
+<table>
+<thead>
+<tr>
+<th>Default keybinding</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ctrl+right</code><br><strong>NB</strong> On Mac this keybinding might need your attention, see <a href="../quirks/">Quirks</a>.</td>
+<td><strong>Slurp Forward</strong></td>
+<td>Moves the <em>closing</em> bracket <em>forward</em>, <em>away</em> from the cursor, past the following form, if any. <br> <img alt="" src="../images/paredit/slurp-forward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+left</code> <br><strong>NB</strong> On Mac this keybinding might need your attention, see <a href="../quirks/">Quirks</a>.</td>
+<td><strong>Barf Forward</strong></td>
+<td>Moves the <em>closing</em> bracket <em>backward</em>, <em>towards</em> the cursor, past the preceding form. <br> <img alt="" src="../images/paredit/barf-forward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+left</code></td>
+<td><strong>Slurp Backward</strong></td>
+<td>Moves the <em>opening</em> bracket <em>backward</em>, <em>away</em> from the cursor, past the preceding form, if any. <br> <img alt="" src="../images/paredit/slurp-backward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+right</code></td>
+<td><strong>Barf Backward</strong></td>
+<td>Moves the <em>opening</em> bracket <em>forward</em>, <em>towards</em> the cursor, past the following form. <br> <img alt="" src="../images/paredit/barf-backward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+s</code></td>
+<td><strong>Splice Sexp</strong></td>
+<td>Remove enclosing brackets. <br> <img alt="" src="../images/paredit/splice.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+s</code></td>
+<td><strong>Split Sexp</strong></td>
+<td>Splits a string, or a list, into two strings, or lists of the same type as the current. <br> <img alt="" src="../images/paredit/split.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+j</code></td>
+<td><strong>Join Sexps/Forms</strong></td>
+<td>Joins two strings, or two lists of the same type, into one form (string/list). <br> <img alt="" src="../images/paredit/join.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+p ctrl+alt+r</code></td>
+<td><strong>Raise Sexp</strong></td>
+<td>Replaces the enclosing list with the current form. <br> <img alt="" src="../images/paredit/raise.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+t</code></td>
+<td><strong>Transpose Sexps/Forms</strong></td>
+<td>Swaps place of the two forms surrounding the cursor. <br> <img alt="" src="../images/paredit/transpose.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift</code> <code>b</code><br> <code>ctrl+alt+shift</code> <code>f</code></td>
+<td><strong>Drag Sexp Backward/Forward</strong></td>
+<td>Moves the current form to the behind/in front of the previous/next one. <br> <img alt="" src="../images/paredit/drag-backward-forward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift</code> <code>u</code><br><code>ctrl+alt+shift</code> <code>d</code></td>
+<td><strong>Drag Sexp Backward Up</strong><br><strong>Drag Sexp Forward Down</strong></td>
+<td>Moves the current form up/out of the current list, <em>backwards</em>, and down/in to the following list, <em>forwards</em>, keeping the cursor within the sexpr being dragged.<br> <img alt="" src="../images/paredit/drag-backward-up-forward-down.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift</code> <code>k</code><br><code>ctrl+alt+shift</code> <code>j</code></td>
+<td><strong>Drag Sexp Forward Up</strong><br><strong>Drag Sexp Backward Down</strong></td>
+<td>Moves the current form up/out of the current list, <em>forwards</em>, and down/in to the preceding list, <em>backwards</em>, keeping the cursor within the sexpr being dragged.<br> <img alt="" src="../images/paredit/drag-forward-up-backward-down.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+c</code></td>
+<td><strong>Convolute</strong></td>
+<td>¯\_(ツ)_/¯ <br> <img alt="" src="../images/paredit/convolute.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+shift+delete</code></td>
+<td><strong>Kill Sexp Forward</strong></td>
+<td>Deletes the next form in the same enclosing form as the cursor.<br> <img alt="" src="../images/paredit/kill-forward-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+backspace</code></td>
+<td><strong>Kill Sexp Backward</strong></td>
+<td>Deletes the previous form in the same enclosing form as the cursor.<br> <img alt="" src="../images/paredit/kill-backward-sexp.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+delete</code></td>
+<td><strong>Kill List Forward</strong></td>
+<td>Deletes everything from the cursor to the closing of the current enclosing form.<br> <img alt="" src="../images/paredit/kill-close-list.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+backspace</code></td>
+<td><strong>Kill List Backward</strong></td>
+<td>Deletes everything from the cursor to the opening of the current enclosing form.<br> <img alt="" src="../images/paredit/kill-open-list.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift+delete</code></td>
+<td><strong>Splice Killing Forward</strong></td>
+<td>Delete forward to end of the list, then Splice. <br> <img alt="" src="../images/paredit/splice-killing-forward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift+backspace</code></td>
+<td><strong>Splice Killing Backwards</strong></td>
+<td>Delete backward to the start of the list, then Splice. <br> <img alt="" src="../images/paredit/splice-killing-backward.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift+p</code></td>
+<td><strong>Wrap Around ()</strong></td>
+<td>Wraps the current form, or selection, with parens. <br> <img alt="" src="../images/paredit/wrap-around-parens.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift+s</code></td>
+<td><strong>Wrap Around []</strong></td>
+<td>Wraps the current form, or selection, with square brackets. <br> <img alt="" src="../images/paredit/wrap-around-brackets.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift+c</code></td>
+<td><strong>Wrap Around {}</strong></td>
+<td>Wraps the current form, or selection, with curlies. <br> <img alt="" src="../images/paredit/wrap-around-curlies.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+shift+q</code></td>
+<td><strong>Wrap Around ""</strong></td>
+<td>Wraps the current form, or selection, with double quotes. Inside strings it will quote the quotes. <br> <img alt="" src="../images/paredit/wrap-around-quotes.gif" /></td>
+</tr>
+<tr>
+<td><code>ctrl+alt+r</code><br><code>ctrl+alt+p</code>/<code>s</code>/<code>c</code>/<code>q</code></td>
+<td><strong>Rewrap</strong></td>
+<td>Changes enclosing brackets of the current form to parens/square brackets/curlies/double quotes.. <br> <img alt="" src="../images/paredit/rewrap.gif" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="about-the-keyboard-shortcuts">About the Keyboard Shortcuts</h2>
+<p>Care has been put in to making the default keybindings somewhat logical, easy to use, and work with most keyboard layouts. Slurp and barf forward are extra accessible to go with the recommendation to learn using these two super handy editing commands.</p>
+<p>Note: You can choose to disable all default key bindings by configuring <code>calva.paredit.defaultKeyMap</code> to <code>none</code>. (Then you probably also want to register your own shortcuts for the commands you often use.)</p>
+<p>If you add your own key bindings, please be aware that <a href="https://github.com/microsoft/vscode/issues/85879">shortcuts with typable characters will work badly in the the REPL window</a>. Please avoid.</p>
+<p>Happy Editing! ❤️</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../debugger/" class="btn btn-neutral float-right" title="Debugger">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../formatting/" class="btn btn-neutral" title="Formatting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../formatting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../debugger/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

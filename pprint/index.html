@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Pretty Printing - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Pretty Printing";
+    var mkdocs_page_input_path = "pprint.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Pretty Printing</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#toggle-it">Toggle it</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#your-selection-of-prettifiers">Your Selection of Prettifiers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#why-does-server-or-client-side-matter">Why does Server or Client Side Matter?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#need-more-configurability">Need More Configurability?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../jack-in-guide/">Learn about Calva Jack-in</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Features &raquo;</li>
+        
+      
+    
+    <li>Pretty Printing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="pretty-printing">Pretty Printing</h1>
+<p>In Calva, pretty printing is a mode. Prettiness is on by default and all your evaluation results will get that treatment.</p>
+<h2 id="toggle-it">Toggle it</h2>
+<p>There is a <code>pprint</code> indicator to the right in the status bar which shows the status of the mode. Click the indicator to toggle prettification on and off. There is also a <strong>Calva: Toggle Pretty Printing for All Evaluations</strong> command.</p>
+<p>Tip: If you have evaluated something time consuming, or that is not idempotent, with pretty printing mistakenly off: <em>toggle it on and evaluate <code>*1</code>.</em></p>
+<h2 id="configuration">Configuration</h2>
+<p>For most people the defaults will probably work, but Calva pretty printing comes a few knobs you can turn, and they are all available through the <code>calva.prettyPrintingOptions</code> settings. Things you can set are:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Type</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>boolean</td>
+<td>so this is a third way you can change this mode 😄</td>
+</tr>
+<tr>
+<td><code>printEngine</code></td>
+<td>enum</td>
+<td>which printer function that will be used. Default is <code>pprint</code>, more about this setting below</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>number</td>
+<td>the maximum line length of printed output (or at least the printers will try)</td>
+</tr>
+<tr>
+<td><code>maxLength</code></td>
+<td>number</td>
+<td>the maximum number of elements printed in nested nodes, <a href="https://clojuredocs.org/clojure.core/*print-length*#example-542692cac026201cdc326b12">good for evaluating something like <code>(iterate inc 0)</code></a>, which you shouldn't do without setting <code>maxLength</code>. Most printers will indicate truncated lists with <code>...</code> at the end.</td>
+</tr>
+<tr>
+<td><code>maxDepth</code></td>
+<td>number</td>
+<td>the maximum number of levels deep that will get printed. Different printers mark a stop different ways. <code>puget</code> doesn't support it at all.</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../customizing/">Customizing Calva</a> for some tips on adding settings like these.</p>
+<p>Here's an example of how <code>zprint</code> handles <code>maxDepth</code> (from the <a href="https://github.com/BetterThanTomorrow/calva/blob/dev/src/cljs-lib/src/calva/pprint/printer.cljs">Calva implementation</a> of it's client side pretty printing.).</p>
+<pre><code class="clojure">  (pretty-print [[[[[[[[:deeper]]]]]]]] {:max-depth 4})
+  ;; =&gt; {:value &quot;[[[[##]]]]&quot;}
+</code></pre>
+
+<h3 id="your-selection-of-prettifiers">Your Selection of Prettifiers</h3>
+<p>Pretty printing can happen on the <em>server</em> (i.e. in the JVM, via nREPL), or on the <em>client</em> (i.e. in node, via VS Code/Calva). Client side always uses <code>zprint</code>. Server side you can choose from these printers:</p>
+<table>
+<thead>
+<tr>
+<th>Print Engine</th>
+<th>Client or Server Side</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>calva</code></td>
+<td>client</td>
+<td>i.e. the nREPL server will plain print the results, and then Calva will pretty it.</td>
+</tr>
+<tr>
+<td><a href="https://clojure.github.io/clojure/clojure.pprint-api.html"><code>pprint</code></a></td>
+<td>server</td>
+<td>current Calva default (<code>clojure.core/pprint</code> is a bit basic, but it's tried and tested, and has none of the server side printing issues mentioned below.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/brandonbloom/fipp"><code>fipp</code></a></td>
+<td>server</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/greglook/puget"><code>puget</code></a></td>
+<td>server</td>
+<td>Lacks <code>maxDepth</code> option.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kkinnear/zprint"><code>zprint</code></a></td>
+<td>server</td>
+<td>Recommended. Will need to be configured before <a href="../connect/">Jack-in</a> if you want Calva's help to inject its dependencies</td>
+</tr>
+</tbody>
+</table>
+<p>It is this particular selection of server side functions, because they have pre-configured print-functions in <a href="https://docs.cider.mx/cider-nrepl/"><code>cider-nrepl</code></a>.</p>
+<h3 id="why-does-server-or-client-side-matter">Why does Server or Client Side Matter?</h3>
+<p>This matters because on the server all pretty printers, except <code>pprint</code> does more than just pretty print the result that would be printed with plain printing. Pretty printing results on the server causes some results to get expanded. This can have huge implications depending on the results and which printer is used. E.g. for <a href="https://www.datomic.com">Datomic</a> transaction results, you will get the whole database printed. Twice. Depending on the database, you could be so unlucky that nothing gets printed, instead you will soon have a very hot computer.</p>
+<blockquote>
+<p>Note: With the help of zprint creator, <a href="https://github.com/kkinnear">Kim Kinnear</a>, we have <a href="https://github.com/kkinnear/zprint/issues/111">found ways</a> to compensate for this problems. Ways that are not yet implemented, but please stay tuned.</p>
+</blockquote>
+<p>Then, why not always do it client side? It turns out that on the client side there are also things going on. Calva gets the results back as a string and therefore it needs to first be parsed back to <a href="https://github.com/edn-format/edn">EDN</a>, before it can be pretty printed by <code>zprint</code>. And – here's the catch – all results are not valid EDN and therefore can't be pretty printed by <code>zprint</code>. Datomic transaction results are one example.</p>
+<h3 id="need-more-configurability">Need More Configurability?</h3>
+<p>The current options are limited, because our time developing Calva is limited. But <code>cider-nrepl</code> really allows for fully configurable pretty printing, so it is within reach. Please feel invited to give us feedback on what you would want to configure for the printing of results. File issues and/or chat us up in #calva on the Clojurians slack.</p>
+<p>Enjoy Prettiful Printing! ❤️</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../linting/" class="btn btn-neutral float-right" title="Linting">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../debugger/" class="btn btn-neutral" title="Debugger"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../debugger/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../linting/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

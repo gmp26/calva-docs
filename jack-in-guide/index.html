@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Learn about Calva Jack-in - Calva Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Learn about Calva Jack-in";
+    var mkdocs_page_input_path = "jack-in-guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Calva Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Getting Started</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect/">Connect Calva to Your Project</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../try-first/">Something to Try First (After Connecting)</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../finding-commands/">Finding Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../eval-tips/">Code Evaluation Tips</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Features</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../commands-top10/">The Top 10 Calva Commands</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../formatting/">Formatting</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../paredit/">Paredit – a Visual Guide</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../debugger/">Debugger</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pprint/">Pretty Printing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../linting/">Linting</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Customizing Calva</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizing/">Customizing Calva</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../connect-sequences/">REPL Jack-in and Connection Sequences</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-commands/">Running Custom REPL Commands</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Using Calva with X</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../rebl/">How to Use Calva and REBL Together</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Calva and the VIM Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../wsl/">Calva ❤️ WSL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../remote-development/">Using Calva with Remote Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../luminus/">How to Use Calva with Luminus</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Etcetera</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../workspace-layouts/">Workspace layouts</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../quirks/">Quirks</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">In Depth</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Learn about Calva Jack-in</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-it-solves">What it Solves</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#a-controlled-shell-command">A Controlled Shell Command</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-types-builds-aliases-profiles-etcetera">Project Types, Builds, Aliases, Profiles, etcetera</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connecting">Connecting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#starting-your-clojure-app">Starting Your Clojure App</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#clojurescript">ClojureScript</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#compiling-the-app-and-watchers">Compiling the App and Watchers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#starting-the-app">Starting the App</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connecting_1">Connecting</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#shadow-cljs-is-less-managed-by-calva">shadow-cljs is Less Managed by Calva</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hack-away">Hack Away</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#switch-clojurescript-builds">Switch ClojureScript Builds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#play-with-starting-the-cljs-repl-yourself">Play with Starting the cljs-repl Yourself</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#about-full-stack-applications">About Full Stack Applications</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#please-grab-your-calva-jack-in-certificate">Please Grab your Calva Jack-In Certificate</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Calva Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>In Depth &raquo;</li>
+        
+      
+    
+    <li>Learn about Calva Jack-in</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="learn-about-calva-jack-in">Learn about Calva Jack-in</h1>
+<p><em>The Calva Jack-In Academy, by <a href="https://github.com/PEZ">@pez</a></em></p>
+<p>Like with <a href="https://metaredux.com/posts/2019/11/02/hard-cider-understanding-the-jack-in-process.html">CIDER Jack-in</a>, Calva's let-me-help-you-start-your-project-and-connect feature might seem a bit mysterious. It really is helpful, but also really isn't mysterious. Here are a few things about it that is good to know about.</p>
+<h2 id="what-it-solves">What it Solves</h2>
+<p>At first it might seem that something like <code>lein repl</code> in a terminal and then connecting Calva is enough. It sometimes might be, but only if you are in luck. To provide many of its IDE features, Calva relies on nREPL middleware, mainly <a href="https://github.com/clojure-emacs/cider-nrepl">cider-nrepl</a> and, for ClojureScript, <a href="https://github.com/nrepl/piggieback">piggieback</a>. When starting your Clojure(Script) app and its REPL, it needs to be started with these dependencies satisfied. There are mainly three ways this can be achieved.</p>
+<ol>
+<li>In the project definition (files like <code>project.clj</code>, <code>deps.edn</code>, <code>shadow-cljs.edn</code>, and combination of these).</li>
+<li>In your user profile (files like <code>~/.lein/profiles.clj</code> and <code>~/.clojure/deps.edn</code>).</li>
+<li>On the command line.</li>
+</ol>
+<p>Because <strong>1</strong> and <strong>2</strong> are hard to keep in sync with the various editor environment people in your project might be using, Calva Jack-In is about <strong>3</strong>.</p>
+<p>Ideally, you will be able to rid your project files completely of editor dependencies, when people working on the project can rely on the Jack-In features of their Clojure editor.</p>
+<h2 id="a-controlled-shell-command">A Controlled Shell Command</h2>
+<p>At its core Calva Jack-In is just a glorified, REPL-starting, command-line. No, it is more than that, but anyway. The command line can look like so for a Leiningen project using legacy Figwheel for its ClojureScript assistance:</p>
+<pre><code class="sh">lein update-in :dependencies conj '[nrepl&quot;0.6.0&quot;]' -- update-in :dependencies conj '[cider/piggieback&quot;0.4.1&quot;]' -- update-in :dependencies conj '[figwheel-sidecar&quot;0.5.18&quot;]' -- update-in :plugins conj '[cider/cider-nrepl&quot;0.22.4&quot;]' -- update-in '[:repl-options :nrepl-middleware]' conj '[&quot;cider.nrepl/cider-middleware&quot;]' -- update-in '[:repl-options :nrepl-middleware]' conj '[&quot;cider.piggieback/wrap-cljs-repl&quot;]' -- with-profile +dev repl :headless
+</code></pre>
+
+<p>Even if a bit long, it might look simple enough. But actually it has taken quite some effort to make Calva craft it. Shell quoting can be really tricky. Look at how <code>'[nrepl"0.6.0"]'</code> doesn't have a space between <code>nrepl</code> and the version. That was the only way I could find that was cross platform enough to make all supported shells parse the command line. (The trick relies on that the string is read by the super reliable Clojure Reader, which does not need that space to tokenize it.)</p>
+<p>It is awesome that Clojure is used on so many platforms, but for a tool smith this also means more work. (I think Windows and its shell hell ate up about 95% of the many hours spent on getting the quoting good enough.)</p>
+<p>The command-line crafted is then used to start a shell command that Calva controls, but we are getting ahead of ourselves...</p>
+<h2 id="project-types-builds-aliases-profiles-etcetera">Project Types, Builds, Aliases, Profiles, etcetera</h2>
+<p>In order to cook the right command for your project, Calva looks for project files, reads them, and figures out what possible project types and ClojureScript tools could be involved. Then Calva presents you with a menu with the options it has found. You need to know enough about your project to answer this question. It looks like this in a shadow-cljs project that uses a <code>deps.edn</code> file for setting up its classpath.</p>
+<p><img alt="Calva Jack-In Project Types Prompt" src="https://user-images.githubusercontent.com/30010/68088862-66b70a80-fe63-11e9-81e0-099f12460a63.png" /></p>
+<p>(I know enough about this particular project to know that I should choose the <code>shadow-cljs</code> project type.)</p>
+<p>But Calva isn't ready to cook the command-line just yet, depending on the project type, and contents of your project files, more info is needed. E.g. in the case of shadow-cljs projects, Calva needs to know what builds to start.</p>
+<p><img alt="shadow-cljs Builds to start" src="https://user-images.githubusercontent.com/30010/68088914-18eed200-fe64-11e9-842b-e3f0d1ed6b9f.png" /></p>
+<p>Here you can select any combination of builds defined in the project, and Calva will cook a command line that starts them.</p>
+<p>You might get more prompts from Calva before it issues the command, but for this example project, Calva goes ahead, cooks the command line, and issues it. On my Mac, it looks like so:</p>
+<pre><code class="sh">npx shadow-cljs -d cider/piggieback:0.4.1 -d cider/cider-nrepl:0.22.4 watch :app
+</code></pre>
+
+<p>(Much shorter than the one with lein-figwheel, right? It is because shadow-cljs is aware of CIDER dependencies, so doesn't need as many dependencies specified as some other project types do.)</p>
+<h2 id="connecting">Connecting</h2>
+<p>When the command is issued Calva needs to wait until the REPL Server is started, before connecting to it, and possibly continuing with starting a ClojureScript REPL and connect to that as well. It also needs to know which port to connect to.</p>
+<p>Because reasons, Calva can't yet read the <code>stdout</code> of the shell command it has issued, so to know when the REPL server is started, and on which port, Calva monitors the filesystem for the <code>.nrepl-port</code> file. (This file is not always named like that. shadow-cljs, for instance, creates the file <code>.shadow-cljs/nrepl.port</code>.)</p>
+<p>When the port file is created, Calva picks up the port number from it and connects to the nREPL server. At this point you have a Clojure REPL backing your Calva session, providing all sorts of nice IDE help for you.</p>
+<h2 id="starting-your-clojure-app">Starting Your Clojure App</h2>
+<p>Once you have the Clojure REPL connected you can start your Clojure app/server. See <a href="connect-sequences">Custom Connect Sequences</a> for how to let Calva do this for you automatically. See the same article for ways to automate more of the Jack-in process. It can be brought down to a single <strong>Jack-In</strong> command, even for a full stack Clojure and ClojureScript application.</p>
+<h2 id="clojurescript">ClojureScript</h2>
+<p>For ClojureScript, things are not done yet, though, far from it. It turns out that cooking the command line was the easy part.</p>
+<p>In order for Calva to provide REPL power for ClojureScript projects, several things need to happen:</p>
+<ol>
+<li>A Clojure nREPL connection needs to be established. We've covered that above. Calva makes an nREPL session clone to use for the ClojureScript REPL and then:</li>
+<li>Your ClojureScript app needs to be compiled.</li>
+<li>Your ClojureScript app needs to be started.</li>
+<li>The Clojure nREPL session needs to be promoted to a ClojureScript nREPL session. (This is what piggieback helps with.)</li>
+</ol>
+<p>(It's also possible to connect Calva directly to a Nashorn, bare nodejs, or browser REPL, but let's stick to the scenario where you get a REPL into your running application.)</p>
+<h3 id="compiling-the-app-and-watchers">Compiling the App and Watchers</h3>
+<p>Depending on ClojureScript project type, Calva uses different methods to start the compilation and the watcher:</p>
+<ul>
+<li><strong>Figwheel:</strong> The compilation and the watchers are started in the Clojure REPL session. (This is both for Figwheel Main and for lein-figwheel.)</li>
+<li><strong>shadow-cljs:</strong> The compilation and the watchers are started with the Jack-In command line.</li>
+</ul>
+<p>This results in a bit of difference in the user interaction. Mainly that for shadow-cljs, the user needs to check the Jack-In Terminal tab to follow what's going on.</p>
+<h3 id="starting-the-app">Starting the App</h3>
+<p>Number <strong>1.2</strong> above, <em>the app needs to be started</em>, might seem obvious, but it actually trips many people up. Because of this, Calva goes to quite some lengths to provide assistance. Many projects are configured not to spawn a browser session automatically, requesting the app once it has been compiled, so we can't rely on that.</p>
+<p>What Calva does instead is to monitor the output of the commands it uses for starting the compilation, looking for information that the app is ready to be requested/started. It then tells the user this, providing a URL, in case it is a browser app. (There are also settings where you can ask Calva to open the URL automatically for you, regardless what the project settings are.)</p>
+<h3 id="connecting_1">Connecting</h3>
+<p>Meanwhile, Calva is monitoring the output and when it sees that the app is started, it continues to hook up the REPL connection to the editor.</p>
+<p>This whole connection sequence is quite configurable, using <a href="connect-sequences">Custom Connect Sequences</a>. In fact, Calva's built in ClojureScript sequences (Figwheel Main, lein-figwheel, shadow-cljs, and Nashorn) are all built using those same settings mechanisms.</p>
+<h4 id="shadow-cljs-is-less-managed-by-calva">shadow-cljs is Less Managed by Calva</h4>
+<p><strong>NB:</strong> The managed way in which Calva creates and connects the ClojureScript REPL breaks apart a bit for shadow-cljs, which works a bit differently and also outputs most of the information Calva is looking for on the <code>stdout</code> of the REPL start command (where Calva can't see it, remember?). We'll figure out a better way to support shadow-cljs, but for now, the user needs to do more of this figuring out, than is needed with Figwheel projects.</p>
+<h3 id="hack-away">Hack Away</h3>
+<p>So, there are things going on when you start Jack-In, and even more things for ClojureScript projects, but Calva tries to keep it together, so as a user it is a matter of paying attention and responding to a few prompts/menus with pre-populated options. (Prompts which can be configured away, even.)</p>
+<h3 id="switch-clojurescript-builds">Switch ClojureScript Builds</h3>
+<p>Once the REPL is connected you might want to change which ClojureScript build you have Calva connected to. For this Calva has the <strong>Select CLJS Build Connection</strong> command. Please note that you can only switch between builds that you have started.</p>
+<h3 id="play-with-starting-the-cljs-repl-yourself">Play with Starting the <code>cljs-repl</code> Yourself</h3>
+<p>To get a good grip on what is going on when creating and connecting the ClojureScript REPL, I can recommend making a custom connect sequence which leaves the REPL unpromoted (e.g. give it <code>nil</code> as <code>connectCode</code>), and then evaluate the <code>cljs-repl</code> start commands yourself. So for instance, promoting it to a Nashorn ClojureScript REPL looks something like so:</p>
+<pre><code class="clojure">user=&gt; (require 'cljs.repl.nashorn)
+user=&gt; (cider.piggieback/cljs-repl (cljs.repl.nashorn/repl-env))
+ClojureScript 1.10.145
+To quit, type: :cljs/quit
+nil
+cljs.user=&gt; |
+</code></pre>
+
+<p>It is the piggieback middleware there telling you that you can unpromote the REPL by ”evaluating” <code>:cljs/quit</code>.</p>
+<h3 id="about-full-stack-applications">About Full Stack Applications</h3>
+<p>Because Calva uses the Clojure REPL connection to spawn the ClojureScript REPL, and because Calva only handles one Clojure REPL per VS Code window, some projects need special handling by the user.</p>
+<p>If your full stack project is using shadow-cljs for the frontend, like <a href="https://github.com/fulcrologic/fulcro-template">this Fulcro template project</a> does, maybe you first try Jack-In to your backend Clojure REPL, and then to your shadow-cljs frontend. This works if you do it in separate VS Code windows, but if you do it in the same window, the second Jack-In will kill the backend session!</p>
+<p>See also about <a href="../workspace-layouts/">Workspace Layouts</a> for tips about how to actually open the same project folder in two separate VS Code windows.</p>
+<h2 id="please-grab-your-calva-jack-in-certificate">Please Grab your Calva Jack-In Certificate</h2>
+<p>There, you now know all there is to know about Calva Jack-in.</p>
+<p>Just kidding, there are a few more details to it, some of which might find their way into this article at a later time.</p>
+<p>To really get to know it all, you will need to spend some time with the Calva Jack-In code. Head over to the <a href="https://github.com/BetterThanTomorrow/calva/wiki">Calva Development Wiki</a> to learn how to hack on Calva.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../quirks/" class="btn btn-neutral" title="Quirks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../quirks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
