@@ -753,12 +753,13 @@
 <p>You configure Calva's formatting using <a href="https://github.com/weavejester/cljfmt#configuration">cljfmt's configuration EDN</a>. This means that you can adjust the above mentioned defaults, including the indenting.</p>
 <p><strong>NB:</strong> The <code>cljfmt</code> docs mention the <code>:cljfmt</code> config key of Leiningen projects. Calva does not yet read the config from there, so if your Leiningen project has such a configuration, you will need to copy it out into a file.</p>
 <p>To start changing the defaults, paste the following map into a file and save it. It could be somewhere in the project workspace, or some other place, dependig on your requirements:</p>
-<pre><code class="clojure">{:remove-surrounding-whitespace? true
- :remove-trailing-whitespace? true
- :remove-consecutive-blank-lines? false
- :insert-missing-whitespace? true
- :align-associative? false}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="ss">:remove-surrounding-whitespace?</span> <span class="nv">true</span>
+ <span class="ss">:remove-trailing-whitespace?</span> <span class="nv">true</span>
+ <span class="ss">:remove-consecutive-blank-lines?</span> <span class="nv">false</span>
+ <span class="ss">:insert-missing-whitespace?</span> <span class="nv">true</span>
+ <span class="ss">:align-associative?</span> <span class="nv">false</span><span class="p">}</span>
+</code></pre></div>
+
 
 <p>Then set <code>calva.fmt.configPath</code> to the path to the file. The path should either be absolute, or relative to the project root directory. So, if you named the file <code>.cljfmt.edn</code> and saved it in the root of the project, then this setting should be <code>.cljfmt.edn</code>.</p>
 <p>Since you are editing the file in Calva (you are, right?), you can quickly test how different settings affect the formatting. Try:</p>
@@ -772,26 +773,28 @@
 <h3 id="indentation-rules">Indentation rules</h3>
 <p>The <code>cljfmt</code> indents are highly configurable. They, and the rest of the configuration options, are masterly detailed <a href="https://github.com/weavejester/cljfmt#configuration">here</a>.</p>
 <p>Calva is an extra good tool for experimenting with these settings. <code>cljfmt</code> doesn't care about keys in the map that it doesn't now about so you can sneak in test code there to quickly see how it will get formatted by certain rules. Try this, for instance:</p>
-<pre><code class="clojure">{:remove-surrounding-whitespace? true
- :remove-trailing-whitespace? true
- :remove-consecutive-blank-lines? false
- :insert-missing-whitespace? false
- :align-associative? false
- :indents ^:replace {#&quot;^\w&quot; [[:inner 0]]}
- :test-code
- (concat [2]
-         (map #(inc (* % 2))
-              (filter #(aget sieved %)
-                      (range 1 hn))))}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="ss">:remove-surrounding-whitespace?</span> <span class="nv">true</span>
+ <span class="ss">:remove-trailing-whitespace?</span> <span class="nv">true</span>
+ <span class="ss">:remove-consecutive-blank-lines?</span> <span class="nv">false</span>
+ <span class="ss">:insert-missing-whitespace?</span> <span class="nv">false</span>
+ <span class="ss">:align-associative?</span> <span class="nv">false</span>
+ <span class="ss">:indents</span> <span class="o">^</span><span class="ss">:replace</span> <span class="p">{</span><span class="o">#</span><span class="s">&quot;^\w&quot;</span> <span class="p">[[</span><span class="ss">:inner</span> <span class="mi">0</span><span class="p">]]}</span>
+ <span class="ss">:test-code</span>
+ <span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+         <span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">inc </span><span class="p">(</span><span class="nb">* </span><span class="nv">%</span> <span class="mi">2</span><span class="p">))</span>
+              <span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">aget </span><span class="nv">sieved</span> <span class="nv">%</span><span class="p">)</span>
+                      <span class="p">(</span><span class="nb">range </span><span class="mi">1</span> <span class="nv">hn</span><span class="p">))))}</span>
+</code></pre></div>
+
 
 <p>Save, then hit <code>tab</code>, and the code should get formatted like so:</p>
-<pre><code class="clojure"> :test-code
- (concat [2]
-    (map #(inc (* % 2))
-      (filter #(aget sieved %)
-        (range 1 hn))))
-</code></pre>
+<div class="codehilite"><pre><span></span><code> <span class="ss">:test-code</span>
+ <span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">inc </span><span class="p">(</span><span class="nb">* </span><span class="nv">%</span> <span class="mi">2</span><span class="p">))</span>
+      <span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">aget </span><span class="nv">sieved</span> <span class="nv">%</span><span class="p">)</span>
+        <span class="p">(</span><span class="nb">range </span><span class="mi">1</span> <span class="nv">hn</span><span class="p">))))</span>
+</code></pre></div>
+
 
 <p>That's somewhat similar to Nikita Prokopov's <a href="https://tonsky.me/blog/clojurefmt/">Better Clojure Formatting</a> suggestion. (Please be aware that this setting might not be sufficient to get complete <strong>Tonsky Formatting</strong>, please share any settings you do to get full compliance.)</p>
 <h2 id="under-construction">Under Construction</h2>

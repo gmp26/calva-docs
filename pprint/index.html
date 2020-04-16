@@ -827,9 +827,10 @@
 </table>
 <p>See <a href="../customizing/">Customizing Calva</a> for some tips on adding settings like these.</p>
 <p>Here's an example of how <code>zprint</code> handles <code>maxDepth</code> (from the <a href="https://github.com/BetterThanTomorrow/calva/blob/dev/src/cljs-lib/src/calva/pprint/printer.cljs">Calva implementation</a> of it's client side pretty printing.).</p>
-<pre><code class="clojure">  (pretty-print [[[[[[[[:deeper]]]]]]]] {:max-depth 4})
-  ;; =&gt; {:value &quot;[[[[##]]]]&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code>  <span class="p">(</span><span class="nf">pretty-print</span> <span class="p">[[[[[[[[</span><span class="ss">:deeper</span><span class="p">]]]]]]]]</span> <span class="p">{</span><span class="ss">:max-depth</span> <span class="mi">4</span><span class="p">})</span>
+  <span class="c1">;; =&gt; {:value &quot;[[[[##]]]]&quot;}</span>
+</code></pre></div>
+
 
 <h3 id="your-selection-of-prettifiers">Your Selection of Prettifiers</h3>
 <p>Pretty printing can happen on the <em>server</em> (i.e. in the JVM, via nREPL), or on the <em>client</em> (i.e. in node, via VS Code/Calva). Client side always uses <code>zprint</code>. Server side you can choose from these printers:</p>

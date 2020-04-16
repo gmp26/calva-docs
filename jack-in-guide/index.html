@@ -948,8 +948,9 @@
 <p>Ideally, you will be able to rid your project files completely of editor dependencies, when people working on the project can rely on the Jack-In features of their Clojure editor.</p>
 <h2 id="a-controlled-shell-command">A Controlled Shell Command</h2>
 <p>At its core Calva Jack-In is just a glorified, REPL-starting, command-line. No, it is more than that, but anyway. The command line can look like so for a Leiningen project using legacy Figwheel for its ClojureScript assistance:</p>
-<pre><code class="sh">lein update-in :dependencies conj '[nrepl&quot;0.6.0&quot;]' -- update-in :dependencies conj '[cider/piggieback&quot;0.4.1&quot;]' -- update-in :dependencies conj '[figwheel-sidecar&quot;0.5.18&quot;]' -- update-in :plugins conj '[cider/cider-nrepl&quot;0.22.4&quot;]' -- update-in '[:repl-options :nrepl-middleware]' conj '[&quot;cider.nrepl/cider-middleware&quot;]' -- update-in '[:repl-options :nrepl-middleware]' conj '[&quot;cider.piggieback/wrap-cljs-repl&quot;]' -- with-profile +dev repl :headless
-</code></pre>
+<div class="codehilite"><pre><span></span><code>lein update-in :dependencies conj <span class="s1">&#39;[nrepl&quot;0.6.0&quot;]&#39;</span> -- update-in :dependencies conj <span class="s1">&#39;[cider/piggieback&quot;0.4.1&quot;]&#39;</span> -- update-in :dependencies conj <span class="s1">&#39;[figwheel-sidecar&quot;0.5.18&quot;]&#39;</span> -- update-in :plugins conj <span class="s1">&#39;[cider/cider-nrepl&quot;0.22.4&quot;]&#39;</span> -- update-in <span class="s1">&#39;[:repl-options :nrepl-middleware]&#39;</span> conj <span class="s1">&#39;[&quot;cider.nrepl/cider-middleware&quot;]&#39;</span> -- update-in <span class="s1">&#39;[:repl-options :nrepl-middleware]&#39;</span> conj <span class="s1">&#39;[&quot;cider.piggieback/wrap-cljs-repl&quot;]&#39;</span> -- with-profile +dev repl :headless
+</code></pre></div>
+
 
 <p>Even if a bit long, it might look simple enough. But actually it has taken quite some effort to make Calva craft it. Shell quoting can be really tricky. Look at how <code>'[nrepl"0.6.0"]'</code> doesn't have a space between <code>nrepl</code> and the version. That was the only way I could find that was cross platform enough to make all supported shells parse the command line. (The trick relies on that the string is read by the super reliable Clojure Reader, which does not need that space to tokenize it.)</p>
 <p>It is awesome that Clojure is used on so many platforms, but for a tool smith this also means more work. (I think Windows and its shell hell ate up about 95% of the many hours spent on getting the quoting good enough.)</p>
@@ -962,8 +963,9 @@
 <p><img alt="shadow-cljs Builds to start" src="https://user-images.githubusercontent.com/30010/68088914-18eed200-fe64-11e9-842b-e3f0d1ed6b9f.png" /></p>
 <p>Here you can select any combination of builds defined in the project, and Calva will cook a command line that starts them.</p>
 <p>You might get more prompts from Calva before it issues the command, but for this example project, Calva goes ahead, cooks the command line, and issues it. On my Mac, it looks like so:</p>
-<pre><code class="sh">npx shadow-cljs -d cider/piggieback:0.4.1 -d cider/cider-nrepl:0.22.4 watch :app
-</code></pre>
+<div class="codehilite"><pre><span></span><code>npx shadow-cljs -d cider/piggieback:0.4.1 -d cider/cider-nrepl:0.22.4 watch :app
+</code></pre></div>
+
 
 <p>(Much shorter than the one with lein-figwheel, right? It is because shadow-cljs is aware of CIDER dependencies, so doesn't need as many dependencies specified as some other project types do.)</p>
 <h2 id="connecting">Connecting</h2>
@@ -1003,13 +1005,14 @@
 <p>Once the REPL is connected you might want to change which ClojureScript build you have Calva connected to. For this Calva has the <strong>Select CLJS Build Connection</strong> command. Please note that you can only switch between builds that you have started.</p>
 <h3 id="play-with-starting-the-cljs-repl-yourself">Play with Starting the <code>cljs-repl</code> Yourself</h3>
 <p>To get a good grip on what is going on when creating and connecting the ClojureScript REPL, I can recommend making a custom connect sequence which leaves the REPL unpromoted (e.g. give it <code>nil</code> as <code>connectCode</code>), and then evaluate the <code>cljs-repl</code> start commands yourself. So for instance, promoting it to a Nashorn ClojureScript REPL looks something like so:</p>
-<pre><code class="clojure">user=&gt; (require 'cljs.repl.nashorn)
-user=&gt; (cider.piggieback/cljs-repl (cljs.repl.nashorn/repl-env))
-ClojureScript 1.10.145
-To quit, type: :cljs/quit
-nil
-cljs.user=&gt; |
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nv">user=&gt;</span> <span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;cljs.repl.nashorn</span><span class="p">)</span>
+<span class="nv">user=&gt;</span> <span class="p">(</span><span class="nf">cider.piggieback/cljs-repl</span> <span class="p">(</span><span class="nf">cljs.repl.nashorn/repl-env</span><span class="p">))</span>
+<span class="nv">ClojureScript</span> <span class="mf">1.10</span><span class="nv">.145</span>
+<span class="nv">To</span> <span class="nv">quit</span>, <span class="nv">type</span><span class="err">:</span> <span class="ss">:cljs/quit</span>
+<span class="nv">nil</span>
+<span class="nv">cljs.user=&gt;</span> <span class="nv">|</span>
+</code></pre></div>
+
 
 <p>It is the piggieback middleware there telling you that you can unpromote the REPL by ”evaluating” <code>:cljs/quit</code>.</p>
 <h3 id="about-full-stack-applications">About Full Stack Applications</h3>

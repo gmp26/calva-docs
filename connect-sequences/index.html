@@ -768,72 +768,74 @@
 <p>The <a href="https://github.com/BetterThanTomorrow/calva/blob/master/src/nrepl/connectSequence.ts">Calva built-in sequences</a> also uses this format, check them out to get a clearer picture of how these settings work.</p>
 <h2 id="example-sequences">Example Sequences</h2>
 <p>Setting for a full-stack application. It starts the backend server when the CLJ REPL has started. Then proceeds to create a custom CLJS REPL (calling in to the application code for this). And then connects to it.</p>
-<pre><code class="json">{
-    &quot;calva.replConnectSequences&quot;: [
-        {
-            &quot;name&quot;: &quot;Example Sequence&quot;,
-            &quot;projectType&quot;: &quot;Clojure-CLI&quot;,
-            &quot;afterCLJReplJackInCode&quot;: &quot;(go)&quot;,
-            &quot;cljsType&quot;: {
-                &quot;startCode&quot;: &quot;(do (require '[cljs-test.main :refer :all])(start-nrepl+fig))&quot;,
-                &quot;isStartedRegExp&quot;: &quot;Prompt will show&quot;,
-                &quot;connectCode&quot;: &quot;(do (use 'cljs-test.main) (cljs-repl))&quot;,
-                &quot;isConnectedRegExp&quot;: &quot;To quit, type: :cljs/quit&quot;,
-                &quot;printThisLineRegExp&quot;: &quot;\\[Figwheel\\] Starting Server at.*&quot;
-            }
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;calva.replConnectSequences&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Sequence&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;Clojure-CLI&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;afterCLJReplJackInCode&quot;</span><span class="p">:</span> <span class="s2">&quot;(go)&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cljsType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;startCode&quot;</span><span class="p">:</span> <span class="s2">&quot;(do (require &#39;[cljs-test.main :refer :all])(start-nrepl+fig))&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;isStartedRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;Prompt will show&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;connectCode&quot;</span><span class="p">:</span> <span class="s2">&quot;(do (use &#39;cljs-test.main) (cljs-repl))&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;isConnectedRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;To quit, type: :cljs/quit&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;printThisLineRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;\\[Figwheel\\] Starting Server at.*&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 
 <p>Here is an example from the <a href="https://juxt.pro/blog/posts/edge.html">JUXT Edge</a> project template. It adds two sequences, one for when only the Clojure REPL should be launched and one for when the customized Edge cljs repl should also be connected. The <strong>Edge backend + frontend</strong> sequence specifies that the web app should be opened by Calva, making cljs repl connection more stable, and also adds <code>menuSelections</code> to skip the <strong>launch aliases</strong> prompt.</p>
-<pre><code class="json">{
-    &quot;calva.replConnectSequences&quot;: [
-        {
-            &quot;name&quot;: &quot;Edge backend only&quot;,
-            &quot;projectType&quot;: &quot;Clojure CLI&quot;
-        },
-        {
-            &quot;name&quot;: &quot;Edge backend + frontend&quot;,
-            &quot;projectType&quot;: &quot;Clojure CLI&quot;,
-            &quot;cljsType&quot;: {
-                &quot;dependsOn&quot;: &quot;Figwheel Main&quot;,
-                &quot;startCode&quot;: &quot;(do (require 'dev-extras) (dev-extras/go) (println \&quot;Edge Figwheel Main started\&quot;) ((resolve 'dev-extras/cljs-repl)))&quot;,
-                &quot;isReadyToStartRegExp&quot;: &quot;Edge Figwheel Main started&quot;,
-                &quot;openUrlRegExp&quot;: &quot;Website listening on: (?&lt;url&gt;\\S+)&quot;,
-                &quot;printThisLineRegExp&quot;: &quot;\\[Edge\\]&quot;,
-                &quot;shouldOpenUrl&quot;: true,
-                &quot;connectCode&quot;: &quot;(do (require 'dev-extras) ((resolve 'dev-extras/cljs-repl)))&quot;,
-                &quot;isConnectedRegExp&quot;: &quot;To quit, type: :cljs/quit&quot;,
-                &quot;buildsRequired&quot;: false
-            },
-            &quot;menuSelections&quot;: {
-                &quot;cljAliases&quot;: [
-                    &quot;dev&quot;,
-                    &quot;build&quot;,
-                    &quot;dev/build&quot;
-                ],
-            }
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;calva.replConnectSequences&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Edge backend only&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;Clojure CLI&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Edge backend + frontend&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;Clojure CLI&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cljsType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;dependsOn&quot;</span><span class="p">:</span> <span class="s2">&quot;Figwheel Main&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;startCode&quot;</span><span class="p">:</span> <span class="s2">&quot;(do (require &#39;dev-extras) (dev-extras/go) (println \&quot;Edge Figwheel Main started\&quot;) ((resolve &#39;dev-extras/cljs-repl)))&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;isReadyToStartRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;Edge Figwheel Main started&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;openUrlRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;Website listening on: (?&lt;url&gt;\\S+)&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;printThisLineRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;\\[Edge\\]&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;shouldOpenUrl&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;connectCode&quot;</span><span class="p">:</span> <span class="s2">&quot;(do (require &#39;dev-extras) ((resolve &#39;dev-extras/cljs-repl)))&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;isConnectedRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;To quit, type: :cljs/quit&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;buildsRequired&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;menuSelections&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;cljAliases&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;dev&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;build&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;dev/build&quot;</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
 
 <p>A Clojure CLI sequence that does not promote the ClojureScript repl at all (leaving it a Clojure REPL), and leaves that up to you to do interactively. (Could be useful while you are developing a custom cljs repl.) The example is for when adapting a Figwheel Main repl.</p>
-<pre><code class="json">{
-    &quot;calva.replConnectSequences&quot;: [
-        {
-            &quot;name&quot;: &quot;Do not promote to cljs&quot;,
-            &quot;projectType&quot;: &quot;Clojure CLI&quot;,
-            &quot;cljsType&quot;: {
-                &quot;dependsOn&quot;: &quot;Figwheel Main&quot;,
-                &quot;connectCode&quot;: &quot;\&quot;Don't promote me bro!\&quot;&quot;,
-                &quot;isConnectedRegExp&quot;: &quot;Don't promote me bro!&quot;
-            }
-        }
-    ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;calva.replConnectSequences&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Do not promote to cljs&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;Clojure CLI&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cljsType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;dependsOn&quot;</span><span class="p">:</span> <span class="s2">&quot;Figwheel Main&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;connectCode&quot;</span><span class="p">:</span> <span class="s2">&quot;\&quot;Don&#39;t promote me bro!\&quot;&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;isConnectedRegExp&quot;</span><span class="p">:</span> <span class="s2">&quot;Don&#39;t promote me bro!&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               

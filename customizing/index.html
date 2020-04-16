@@ -893,27 +893,29 @@
                 <h1 id="customizing-calva">Customizing Calva</h1>
 <p>Don't like the defaults? On this page we can collect some of the customizations that people have done, and maybe write a thing or two about it some day.</p>
 <p>Tip For VS Code newcomers: The search box in <strong>Settings</strong> is your friend. Also, some Calva settings are more complex than the Settings UI can handle. VS Code will then show you a link to <code>settings.json</code>. And VS Code's built-in <code>json</code> extension is awesome. To add settings for, say Calva's Pretty Printing, search for ”prettyprint” in VS Code Settings and follow the link to <code>settings.json</code>. Start typing ”calvapretty” until auto-complete suggests <code>calva.prettyPrintingOptions</code>. Press ENTER and VS Code will fill in these defaults:</p>
-<pre><code class="json">    &quot;calva.prettyPrintingOptions&quot;: {
-        &quot;enabled&quot;: true,
-        &quot;printEngine&quot;: &quot;pprint&quot;,
-        &quot;width&quot;: 40
-    },
-</code></pre>
+<div class="codehilite"><pre><span></span><code>    <span class="s2">&quot;calva.prettyPrintingOptions&quot;</span><span class="err">:</span> <span class="p">{</span>
+        <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;printEngine&quot;</span><span class="p">:</span> <span class="s2">&quot;pprint&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">40</span>
+    <span class="p">}</span><span class="err">,</span>
+</code></pre></div>
+
 
 <h2 id="clojure-defaults">Clojure Defaults</h2>
 <p>Calva sets some VS Code settings for all Clojure files. Some of these are needed for Calva to function correctly, which should not be tampered with unless you really know what you are doing, and some of them are for convenience defaults. If you add a setting to your <code>settings.json</code> and accept the snippet help you get when you type <code>"[clojure]"</code>, you will get the Calva defaults pasted:</p>
-<pre><code class="json">    &quot;[clojure]&quot;: {
-        &quot;editor.wordSeparators&quot;: &quot;\t ()\&quot;':,;~@#$%^&amp;{}[]`&quot;,
-        &quot;editor.autoClosingBrackets&quot;: &quot;always&quot;,
-        &quot;editor.autoClosingQuotes&quot;: &quot;always&quot;,
-        &quot;editor.formatOnType&quot;: true,
-        &quot;editor.autoIndent&quot;: &quot;full&quot;,
-        &quot;editor.formatOnPaste&quot;: true,
-        &quot;files.trimTrailingWhitespace&quot;: false,
-        &quot;editor.matchBrackets&quot;: &quot;never&quot;,
-        &quot;editor.parameterHints.enabled&quot;: false
-    }
-</code></pre>
+<div class="codehilite"><pre><span></span><code>    <span class="s2">&quot;[clojure]&quot;</span><span class="err">:</span> <span class="p">{</span>
+        <span class="nt">&quot;editor.wordSeparators&quot;</span><span class="p">:</span> <span class="s2">&quot;\t ()\&quot;&#39;:,;~@#$%^&amp;{}[]`&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;editor.autoClosingBrackets&quot;</span><span class="p">:</span> <span class="s2">&quot;always&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;editor.autoClosingQuotes&quot;</span><span class="p">:</span> <span class="s2">&quot;always&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;editor.formatOnType&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;editor.autoIndent&quot;</span><span class="p">:</span> <span class="s2">&quot;full&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;editor.formatOnPaste&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;files.trimTrailingWhitespace&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;editor.matchBrackets&quot;</span><span class="p">:</span> <span class="s2">&quot;never&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;editor.parameterHints.enabled&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+</code></pre></div>
+
 
 <h3 id="automatic-parmaeter-hints-poppup">Automatic Parmaeter Hints Poppup</h3>
 <p>Calva has helpful parameter hints to aid when typing function calls. They look like so:</p>
@@ -1034,22 +1036,22 @@
 <p>Something I use in IntelliJ/Cursive is the ability to select an expression and hit one of <code>(</code>, <code>[</code>, <code>{</code> to wrap it. And after wrapping the expression I don't want the selection anymore, so if I were wrapping <code>(foo)</code> then I would want to get <code>( | (foo))</code> where <code>|</code> would be my cursor.</p>
 <p>Here's how you can make this work with Calva Paredit: Update all of the <code>Paredit: Wrap Around ...</code> commands so that their respective shortcuts are the wrappers themselves and update the <code>when</code> clause to include <code>editorHasSelection</code> (otherwise when you open a paren and the next expression would get slurped in).</p>
 <p>The change would look like this in your <code>keybindings.json</code>:</p>
-<pre><code class="json">    {
-        &quot;key&quot;: &quot;shift+9&quot;,
-        &quot;command&quot;: &quot;paredit.wrapAroundParens&quot;,
-        &quot;when&quot;: &quot;editorTextFocus &amp;&amp; editorHasSelection &amp;&amp; !editorReadOnly &amp;&amp; editorLangId =~ /clojure|scheme|lisp/ &amp;&amp; paredit:keyMap =~ /original|strict/&quot;
-    },
-    {
-        &quot;key&quot;: &quot;[&quot;,
-        &quot;command&quot;: &quot;paredit.wrapAroundSquare&quot;,
-        &quot;when&quot;: &quot;editorHasSelection &amp;&amp; editorTextFocus &amp;&amp; !editorReadOnly &amp;&amp; editorLangId =~ /clojure|scheme|lisp/ &amp;&amp; paredit:keyMap =~ /original|strict/&quot;
-    },
-    {
-        &quot;key&quot;: &quot;shift+[&quot;,
-        &quot;command&quot;: &quot;paredit.wrapAroundCurly&quot;,
-        &quot;when&quot;: &quot;editorHasSelection &amp;&amp; editorTextFocus &amp;&amp; !editorReadOnly &amp;&amp; editorLangId =~ /clojure|scheme|lisp/ &amp;&amp; paredit:keyMap =~ /original|strict/&quot;
-    }
-</code></pre>
+<div class="codehilite"><pre><span></span><code>    <span class="p">{</span>
+        <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;shift+9&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paredit.wrapAroundParens&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;when&quot;</span><span class="p">:</span> <span class="s2">&quot;editorTextFocus &amp;&amp; editorHasSelection &amp;&amp; !editorReadOnly &amp;&amp; editorLangId =~ /clojure|scheme|lisp/ &amp;&amp; paredit:keyMap =~ /original|strict/&quot;</span>
+    <span class="p">}</span><span class="err">,</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paredit.wrapAroundSquare&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;when&quot;</span><span class="p">:</span> <span class="s2">&quot;editorHasSelection &amp;&amp; editorTextFocus &amp;&amp; !editorReadOnly &amp;&amp; editorLangId =~ /clojure|scheme|lisp/ &amp;&amp; paredit:keyMap =~ /original|strict/&quot;</span>
+    <span class="p">}</span><span class="err">,</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;shift+[&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paredit.wrapAroundCurly&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;when&quot;</span><span class="p">:</span> <span class="s2">&quot;editorHasSelection &amp;&amp; editorTextFocus &amp;&amp; !editorReadOnly &amp;&amp; editorLangId =~ /clojure|scheme|lisp/ &amp;&amp; paredit:keyMap =~ /original|strict/&quot;</span>
+    <span class="p">}</span>
+</code></pre></div>
                 
               
               

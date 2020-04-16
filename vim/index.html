@@ -838,30 +838,32 @@
 <li>Open the Keyboard Shortcuts JSON file from the Command Palette</li>
 <li>Disable <code>clearInlineResults</code> and remap the command e.g.</li>
 </ul>
-<pre><code>// Place your key bindings in this file to override the defaults
-[
-  {
-    &quot;key&quot;: &quot;escape&quot;,
-    &quot;command&quot;: &quot;-calva.clearInlineResults&quot;
-  },
-  {
-    &quot;key&quot;: &quot;shift+escape&quot;,
-    &quot;command&quot;: &quot;calva.clearInlineResults&quot;,
-    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; !editorHasMultipleSelections &amp;&amp; !editorReadOnly &amp;&amp; !hasOtherSuggestions &amp;&amp; !suggestWidgetVisible &amp;&amp; editorLangId == 'clojure'&quot;
-  },
-]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">// Place your key bindings in this file to override the defaults</span>
+<span class="err">[</span>
+<span class="err">  {</span>
+<span class="err">    &quot;key&quot;: &quot;escape&quot;,</span>
+<span class="err">    &quot;command&quot;: &quot;-calva.clearInlineResults&quot;</span>
+<span class="err">  },</span>
+<span class="err">  {</span>
+<span class="err">    &quot;key&quot;: &quot;shift+escape&quot;,</span>
+<span class="err">    &quot;command&quot;: &quot;calva.clearInlineResults&quot;,</span>
+<span class="err">    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; !editorHasMultipleSelections &amp;&amp; !editorReadOnly &amp;&amp; !hasOtherSuggestions &amp;&amp; !suggestWidgetVisible &amp;&amp; editorLangId == &#39;clojure&#39;&quot;</span>
+<span class="err">  },</span>
+<span class="err">]</span>
+</code></pre></div>
+
 
 <p>If you run into issues, refer to the commands in the default Keyboard Shortcuts JSON file.</p>
 <h4 id="remap-vims-insert-mode">Remap Vim's Insert Mode</h4>
 <p>Remap vim's insert mode keybinding to go into command mode by adding the following to your user settings:</p>
-<pre><code class="json">&quot;vim.insertModeKeyBindings&quot;: [
-    {
-        &quot;before&quot;: [&quot;j&quot;, &quot;k&quot;],
-        &quot;after&quot;: [&quot;&lt;esc&gt;&quot;]
-    }
-]
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="s2">&quot;vim.insertModeKeyBindings&quot;</span><span class="err">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;before&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">],</span>
+        <span class="nt">&quot;after&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;esc&gt;&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+
 
 <p>(Change <code>before</code> to whatever keybinding you are comfortable with!)</p>
 <h2 id="no-vim-mode-for-the-repl-window">No Vim mode for the REPL Window</h2>
