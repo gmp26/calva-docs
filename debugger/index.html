@@ -403,8 +403,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#instrumenting-a-function" class="md-nav__link">
+    Instrumenting a Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-breakpoints-with-break" class="md-nav__link">
     Setting Breakpoints with #break
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-breakpoints" class="md-nav__link">
+    Conditional Breakpoints
   </a>
   
 </li>
@@ -838,8 +852,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#instrumenting-a-function" class="md-nav__link">
+    Instrumenting a Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-breakpoints-with-break" class="md-nav__link">
     Setting Breakpoints with #break
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-breakpoints" class="md-nav__link">
+    Conditional Breakpoints
   </a>
   
 </li>
@@ -946,7 +974,7 @@
                 
                 <h1 id="debugger">Debugger</h1>
 <p>Calva comes with a powerful expression-based debugger, inspired by <a href="https://cider.mx/">Cider</a>'s debugger, and using the same underlying library, <a href="https://github.com/clojure-emacs/cider-nrepl">cider-nrepl</a>. We hope you love it!</p>
-<p><img alt="Debugger stepping" src="../images/debugger/stepping.gif" /></p>
+<p><img alt="Debugger demonstration: stepping through an instrumented function" src="../images/debugger/stepping.gif" title="Debugger demonstration: stepping through an instrumented function" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The debugger currently does not support ClojureScript. Calva's debugger utilizes cider-nrepl for debugging. See <a href="https://github.com/clojure-emacs/cider/issues/1416">this Cider issue</a> for more information.</p>
@@ -954,8 +982,9 @@
 <h2 id="features">Features</h2>
 <h3 id="current">Current</h3>
 <ul>
-<li>Set breakpoints with <code>#break</code></li>
-<li>Instrument forms with <code>#dbg</code></li>
+<li>Instrument functions for debugging with <code>ctrl+alt+c i</code></li>
+<li>Instrument a function manually with <code>#dbg</code> (as opposed to the above command)</li>
+<li>Set individual breakpoints with <code>#break</code></li>
 <li>Continue to next breakpoint</li>
 <li>Step over form</li>
 <li>Step into form</li>
@@ -967,18 +996,24 @@
 <h3 id="upcoming">Upcoming</h3>
 <ul>
 <li>See structured variables in the debugger side pane (currently maps and collections are just shown as strings)</li>
-<li>Command for instrumenting a function (vs adding <code>#dbg</code> directly in the code), as well as visual indication that a function is instrumented. This will remove the need to place reader tags in your code file.</li>
+<li>Inject values into the debug context</li>
+<li>Trace: continue, printing expressions and their values</li>
 </ul>
 <h2 id="using-the-debugger">Using the Debugger</h2>
-<p>If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags (<code>#break</code> and <code>#dbg</code>) to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with those reader tags, the debugger will start when execution reaches the first breakpoint.</p>
+<p>If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags, <code>#break</code> and <code>#dbg</code>, to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with that reader tag, the debugger will start when execution reaches the first breakpoint. There's also a convenience command to instrument functions - see below.</p>
+<h3 id="instrumenting-a-function">Instrumenting a Function</h3>
+<p>You can instrument a top level function for debugging with <code>ctrl+alt+c i</code>. This places invisible breakpoints throughout the function where pausing makes sense. When you evaluate a call to this function, the debugger will start and execution will pause at the first breakpoint. Annotations show the value of the form at the cursor.</p>
+<p>A border is placed around the definition of the instrumented function and its references to show that it's instrumented. You can remove instrumentation by evaluating the function again normally, such as with <code>ctrl+alt+c space</code>.</p>
+<p><img alt="Instrumenting a function" src="../images/debugger/instrumenting-a-function.gif" title="Instrumenting a function" /></p>
 <h3 id="setting-breakpoints-with-break">Setting Breakpoints with <code>#break</code></h3>
-<p>You can insert a breakpoint manually into any code by placing a <code>#break</code> in front of the form where you want execution to pause, and then evaluating the top level form with <code>ctrl+alt+c space</code>. When you evaluate a call to this code the VS Code debugger will start, the cursor will move to right after the form that's preceded by <code>#break</code>, and the line will be highlighted so show execution is paused there. You'll also see an annotation for the value of the current form.</p>
-<p><img alt="Setting a breakpoint with #break" src="../images/debugger/break.gif" /></p>
+<p>You can insert a breakpoint manually into any code by placing a <code>#break</code> in front of the form where you want execution to pause, and then evaluating the top level form with <code>ctrl+alt+c space</code>. When you evaluate a call to this code the VS Code debugger will start, the cursor will move to right after the form that's preceded by <code>#break</code>, and the line will be highlighted to show execution is paused there.</p>
+<p><img alt="Setting a breakpoint with #break" src="../images/debugger/break.gif" title="Setting a breakpoint with #break" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Code will be executed up to and <em>including</em> the form after the breakpoint.</p>
 </div>
-<p>You can also set conditional breapoints by adding metadata before the form that the <code>#break</code> applies to.</p>
+<h3 id="conditional-breakpoints">Conditional Breakpoints</h3>
+<p>You can set conditional breapoints by adding metadata before the form that the <code>#break</code> applies to.</p>
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">print-nums</span> <span class="p">[</span><span class="nv">n</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">dotimes </span><span class="p">[</span><span class="nv">i</span> <span class="nv">n</span><span class="p">]</span>
     <span class="o">#</span><span class="nv">break</span> <span class="o">^</span><span class="p">{</span><span class="ss">:break/when</span> <span class="p">(</span><span class="nb">= </span><span class="nv">i</span> <span class="mi">7</span><span class="p">)}</span> <span class="c1">;; This breakpoint will only be hit when i equals 7</span>
@@ -987,18 +1022,18 @@
 
 
 <h3 id="instrumenting-a-form-with-dbg">Instrumenting a Form with <code>#dbg</code></h3>
-<p>Adding <code>#dbg</code> before a form then evaluating the form with <code>ctrl+alt+c space</code> will instrument the form, meaning breakpoints will be added in places where it makes sense. When you evaluate the form (or a call to a function containing breakpoints), execution will pause wherever breakpoints were added. These breakpoints are not visible in the editor. If you notice execution does not pause, it's likely that no reasonable place was found to place a breakpoint.</p>
-<p><img alt="Instrumenting a form" src="../images/debugger/dbg-form.gif" /></p>
-<p><img alt="Instrumenting a function" src="../images/debugger/dbg-function.gif" /></p>
+<p>Adding <code>#dbg</code> before a form then evaluating the form with <code>ctrl+alt+c space</code> will instrument the form. This has the same effect as using <a href="#instrumenting-a-function">the instrument command</a>.</p>
+<p><img alt="Instrumenting a form" src="../images/debugger/dbg-form.gif" title="Instrumenting a non-function form" /></p>
+<p><img alt="Instrumenting a function" src="../images/debugger/dbg-function.gif" title="Instrumenting a function" /></p>
 <h3 id="evaluating-code-in-the-paused-context">Evaluating Code in the Paused Context</h3>
 <p>When execution is paused at a breakpoint, you can evaluate code in that context. This can be done in the editor or in the REPL window, as usual. In the REPL window, the prompt changes to <code>&lt;&lt;debug-mode&gt;&gt;=&gt;</code> to show that evaluations will occur in the debug context.</p>
-<p><img alt="Evaluating code in the paused context via the editor" src="../images/debugger/eval-editor.gif" /></p>
+<p><img alt="Evaluating code in the paused context from the editor" src="../images/debugger/eval-editor.gif" title="Evaluating code in the paused context from the editor" /></p>
 <h3 id="viewing-variable-values-while-debugging">Viewing Variable Values While Debugging</h3>
-<p>While debugging, you can view the values of variables in VS Code's debugger side pane. You can also view values by hovering over the variables in the editor. Currently, values for collections and maps are shown as strings, but we plan to make them structured in the future. For now, if you want to see the value of a large structured variable, you can evaluate the variable, either from the editor or from the REPL window.</p>
-<p><img alt="Viewing variable values in the side pane" src="../images/debugger/viewing-variable-values.png" /></p>
+<p>While debugging, you can view the values of variables in VS Code's debugger side pane. You can also view values by hovering over the variables in the editor. Currently, values for collections and maps are shown as strings, but we plan to make them structured in the future. For now, if you want to see the value of a large structured variable, you can evaluate the variable from the editor or from the REPL window.</p>
+<p><img alt="Viewing variable values in the side pane" src="../images/debugger/viewing-variable-values.png" title="Viewing variable values in the side pane" /></p>
 <h3 id="stepping-commands">Stepping Commands</h3>
 <p>You can use VS Code's debugger UI to advance execution while debugging.</p>
-<p><img alt="VS Code's debugger navigation buttons" src="../images/debugger/navigation-buttons.png" /></p>
+<p><img alt="VS Code's debugger navigation buttons" src="../images/debugger/navigation-buttons.png" title="VS Code's debugger navigation buttons" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Clicking restart does nothing, since this functionality does not make sense for our debugger.</p>
@@ -1013,7 +1048,7 @@
 </ul>
 <h2 id="caveats">Caveats</h2>
 <h3 id="breakpoints-in-looprecur">Breakpoints in loop/recur</h3>
-<p>One construct where the debugger is limited is <code>loop</code>/<code>recur</code>. As recur always has to appear in a tail-position inside a <code>loop</code> or a <code>fn</code> and the debugger uses macros to interleave breakpoints in the forms it <strong>might</strong> happen that a <code>recur</code> no longer appears in a tail position. In that case we have to avoid setting up the breakpoint. An example of such a case is:</p>
+<p>One construct where the debugger is limited is <code>loop</code>/<code>recur</code>. As recur always has to appear in a tail-position inside a <code>loop</code> or a <code>fn</code> and the debugger uses macros to interleave breakpoints in the forms, it <strong>might</strong> happen that a <code>recur</code> no longer appears in a tail position. In that case we have to avoid setting up the breakpoint. An example of such a case is:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">loop </span><span class="p">[</span><span class="nv">i</span> <span class="mi">0</span><span class="p">]</span>
   <span class="o">#</span><span class="nv">break</span>
   <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">&lt; </span><span class="nv">i</span> <span class="mi">10</span><span class="p">)</span>
@@ -1024,10 +1059,10 @@
 
 <p>Here the breakpoint is exactly in front of a form that contains as its last expression a <code>recur</code> which is not wrapped in a loop. This breakpoint has no effect. This does not mean you cannot use the debugger with <code>loop</code>, it just means you have to set your debug statements more carefully.</p>
 <h3 id="loading-the-file-and-eval-on-save">Loading the File and "Eval On Save"</h3>
-<p>When you load a file, any breakpoints that were previously set in functions will be unset. If you have the "Eval On Save" setting enabled, your file is also loaded with each save, therefore saving the file will remove breakpoints previously set. This loading for "Eval On Save" may be removed in the future so that only evaluation occurs and not loading.</p>
+<p>When you load a file, any breakpoints that were previously set in functions will be unset. If you have the "Eval On Save" setting enabled, your file is also loaded with each save, therefore saving the file will remove breakpoints previously set.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="my-breakpoint-isnt-being-hit">My breakpoint isn't being hit</h3>
-<p>It's likely that your breakpoint is in a place that cider-nrepl does not see as an apporpriate place to break execution. For example, if you put a breakpoint before a literal number, it will not be hit, because there's no need to show the value of a literal.</p>
+<p>It's likely that your breakpoint is in a place that cider-nrepl does not see as an appropriate place to break execution. For example, if you put a breakpoint before a literal number, it will not be hit, because there's no need to show the value of a literal.</p>
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">simple</span> <span class="p">[</span><span class="nv">x</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="o">#</span><span class="nv">break</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">;; This breakpoint will not be hit</span>
 </code></pre></div>
