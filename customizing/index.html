@@ -438,18 +438,26 @@
     Clojure Defaults
   </a>
   
-    <nav class="md-nav" aria-label="Clojure Defaults">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatic-parmaeter-hints-poppup" class="md-nav__link">
-    Automatic Parmaeter Hints Poppup
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pretty-printing" class="md-nav__link">
+    Pretty Printing
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#calva-highlight" class="md-nav__link">
+    Calva Highlight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-parmaeter-hints-poppup" class="md-nav__link">
+    Automatic Parmaeter Hints Poppup
+  </a>
   
 </li>
       
@@ -484,20 +492,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pretty-printing" class="md-nav__link">
-    Pretty Printing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calva-highlight" class="md-nav__link">
-    Calva Highlight
-  </a>
   
 </li>
       
@@ -780,18 +774,26 @@
     Clojure Defaults
   </a>
   
-    <nav class="md-nav" aria-label="Clojure Defaults">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatic-parmaeter-hints-poppup" class="md-nav__link">
-    Automatic Parmaeter Hints Poppup
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pretty-printing" class="md-nav__link">
+    Pretty Printing
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#calva-highlight" class="md-nav__link">
+    Calva Highlight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-parmaeter-hints-poppup" class="md-nav__link">
+    Automatic Parmaeter Hints Poppup
+  </a>
   
 </li>
       
@@ -826,20 +828,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pretty-printing" class="md-nav__link">
-    Pretty Printing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calva-highlight" class="md-nav__link">
-    Calva Highlight
-  </a>
   
 </li>
       
@@ -912,12 +900,78 @@
         <span class="nt">&quot;editor.formatOnPaste&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="nt">&quot;files.trimTrailingWhitespace&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="nt">&quot;editor.matchBrackets&quot;</span><span class="p">:</span> <span class="s2">&quot;never&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;editor.renderIndentGuides&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="nt">&quot;editor.parameterHints.enabled&quot;</span><span class="p">:</span> <span class="kc">false</span>
     <span class="p">}</span>
 </code></pre></div>
 
 
-<h3 id="automatic-parmaeter-hints-poppup">Automatic Parmaeter Hints Poppup</h3>
+<h2 id="pretty-printing">Pretty Printing</h2>
+<p>Calva's pretty printing mode can be configured a bit. See <a href="../pprint/">Pretty Printing</a>.</p>
+<h2 id="calva-highlight">Calva Highlight</h2>
+<p>Calva takes care of syntax highlighting, and also provides some features not available through VS Code's highlighting mechanism. These extras include rainbow parens, sane bracket matching, and comment form dimming/highlighting.</p>
+<p>You are in charge of how brackets and comments are highlighted via the <code>calva.highlight.&lt;setting&gt;</code> settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableBracketColors</code></td>
+<td>Enable rainbow colors</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>rainbowIndentGuides</code></td>
+<td>Enable rainbow indent guides</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>highlightActiveIndent</code></td>
+<td>Highlight the active indent guide</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>bracketColors</code></td>
+<td>Which colors to use</td>
+<td><code>["#000", "#999"]</code></td>
+</tr>
+<tr>
+<td><code>cycleBracketColors</code></td>
+<td>Whether same colors should be <br> reused for deeply nested brackets</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>misplacedBracketStyle</code></td>
+<td>Style of misplaced bracket</td>
+<td><code>{ "border": "2px solid #c33" }</code></td>
+</tr>
+<tr>
+<td><code>matchedBracketStyle</code></td>
+<td>Style of bracket pair highlight</td>
+<td><code>{"backgroundColor": "#E0E0E0"}</code></td>
+</tr>
+<tr>
+<td><code>ignoredFormStyle</code></td>
+<td>Style of <code>#_...</code> form</td>
+<td><code>{"textDecoration": "none; opacity: 0.5"}</code></td>
+</tr>
+<tr>
+<td><code>commentFormStyle</code></td>
+<td>Style of <code>(comment ...)</code> form</td>
+<td><code>{"fontStyle": "italic"}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The VS Code built-in settings <code>editor.renderIndentGuides</code> and <code>editor.highlightActiveIndent</code> do not have any effect, since the former is switched off by the <strong>Clojure Defaults</strong>, mentioned above. Use Calva Highlight's <code>rainbowIndentGuides</code> and <code>highlightActiveIndent</code> instead. They are different from the built in ones in that they are independent, meaning you can choose to have active indent highlighted while the guides generally are not rendered (this is the default, even).</p>
+</div>
+<h2 id="automatic-parmaeter-hints-poppup">Automatic Parmaeter Hints Poppup</h2>
 <p>Calva has helpful parameter hints to aid when typing function calls. They look like so:</p>
 <p><img width="353" alt="image" src="https://user-images.githubusercontent.com/30010/75957543-8cf4c180-5eba-11ea-8d77-1e543a73ef28.png"></p>
 <p>To have the hints automatically pop up when you are typing, set <code>editor.parameterHints.enabled</code> to <code>true</code> in the above <code>[clojure]</code> scoped setting. (To call them up on demand the default VS Code keybindings are <code>cmd+shift+space</code> on Mac and <code>ctrl+shift+space</code> on Linux/Windows.)</p>
@@ -971,61 +1025,11 @@
 </tbody>
 </table>
 <p>As you might see, the simple pattern here is that in multi-line mode you move the cursor and enter new lines as in the regular editor, and use <code>alt</code> modifier to navigate the history and submit evaluations. In single-line mode it is the other way around.</p>
-<h2 id="pretty-printing">Pretty Printing</h2>
-<p>Calva's pretty printing mode can be configured a bit. See <a href="../pprint/">Pretty Printing</a>.</p>
-<h2 id="calva-highlight">Calva Highlight</h2>
-<p>Calva takes care of syntax highlighting, and also provides some features not available through VS Code's highlighting mechanism. These extras include rainbow parens, sane bracket matching, and comment form dimming/highlighting.</p>
-<p>You are in charge of how brackets and comments are highlighted via the <code>calva.highlight.&lt;setting&gt;</code> settings:</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Meaning</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>enableBracketColors</code></td>
-<td>Enable rainbow colors</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>bracketColors</code></td>
-<td>Which colors to use</td>
-<td><code>["#000", "#999"]</code></td>
-</tr>
-<tr>
-<td><code>cycleBracketColors</code></td>
-<td>Whether same colors should be reused for deeply nested brackets</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>misplacedBracketStyle</code></td>
-<td>Style of misplaced bracket</td>
-<td><code>{ "border": "2px solid #c33" }</code></td>
-</tr>
-<tr>
-<td><code>matchedBracketStyle</code></td>
-<td>Style of bracket pair highlight</td>
-<td><code>{"backgroundColor": "#E0E0E0"}</code></td>
-</tr>
-<tr>
-<td><code>ignoredFormStyle</code></td>
-<td>Style of <code>#_...</code> form</td>
-<td><code>{"textDecoration": "none; opacity: 0.5"}</code></td>
-</tr>
-<tr>
-<td><code>commentFormStyle</code></td>
-<td>Style of <code>(comment ...)</code> form</td>
-<td><code>{"fontStyle": "italic"}</code></td>
-</tr>
-</tbody>
-</table>
-<p>The extras are built from <strong>Clojure Warrior</strong>, created by <a href="https://tonsky.me">Nikita Prokopov, a.k.a. @tonsky</a>'s. Please note that the default styling for <code>(comment ...)</code> forms now is to italicize them (instead of dimming). This is to promote using <code>comment</code> forms to work with the REPL.</p>
 <h2 id="key-bindings">Key bindings</h2>
+<p>Here are a collection of custom keybindings from here and there.</p>
 <ul>
-<li>These key binds replace the default Calva ”prefix”, <code>ctrl+alt+c</code> to just <code>alt+v</code>: <a href="https://gist.github.com/conan/aa38688d7daa50804c8a433215dc6dc9">WebWItch's keybindings.json</a> (Please note, that <code>alt+v</code> does not work for some locales, but for when it works it is much less clunky than the default prefix).</li>
+<li>Replace all Calva <code>ctrl+alt+...</code> key bindings with <code>ctrl+shift+...</code>, for keyboards lacking <code>alt</code> key: https://gist.github.com/PEZ/3fc22e015e0d33fb9b73074fd6abf292</li>
+<li>Replace the default Calva ”prefix”, <code>ctrl+alt+c</code> to just <code>alt+v</code>: <a href="https://gist.github.com/conan/aa38688d7daa50804c8a433215dc6dc9">WebWItch's keybindings.json</a> (Please note, that <code>alt+v</code> does not work for some locales, but for when it works it is much less clunky than the default prefix).</li>
 <li>Here the Calva key is switched for <code>ctrl+,</code>: <a href="https://gist.github.com/pikeview/317f639091f57c3055681b06f0dc791a">manas_marthi's keybindings</a></li>
 <li><a href="../emacs-keybindings/">Keybindings for Emacs users</a></li>
 </ul>
