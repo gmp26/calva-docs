@@ -395,6 +395,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-the-debugger" class="md-nav__link">
     Using the Debugger
   </a>
@@ -844,6 +851,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-the-debugger" class="md-nav__link">
     Using the Debugger
   </a>
@@ -999,6 +1013,8 @@
 <li>Inject values into the debug context</li>
 <li>Trace: continue, printing expressions and their values</li>
 </ul>
+<h2 id="dependencies">Dependencies</h2>
+<p>The debugger itself relies pretty heavily on <a href="https://github.com/clojure-emacs/cider-nrepl">cider-nrepl</a>, as do other parts of Calva, and the decorations to show instrumented functions rely on <a href="https://github.com/borkdude/clj-kondo">clj-kondo</a>. Both of these libraries are loaded as dependencies when you use Calva Jack-in. If you are not using Calva Jack-in, you can add these dependencies in your project definition or user profile. See the <a href="/jack-in-guide">Calva Jack-in guide</a> for more information.</p>
 <h2 id="using-the-debugger">Using the Debugger</h2>
 <p>If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags, <code>#break</code> and <code>#dbg</code>, to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with that reader tag, the debugger will start when execution reaches the first breakpoint. There's also a convenience command to instrument functions - see below.</p>
 <h3 id="instrumenting-a-function">Instrumenting a Function</h3>
