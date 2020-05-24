@@ -823,11 +823,22 @@
                 
                 
                 <h1 id="calva-and-the-vim-extension">Calva and the VIM Extension</h1>
-<p>First thing first. The <a href="https://github.com/VSCodeVim/Vim">VIM Extension</a> and Calva has some friction between them. Expect it to be a bit painful.</p>
+<p>First thing first. The <a href="https://github.com/VSCodeVim/Vim">VIM Extension</a> and Calva has some friction between them. Expect it to be a bit painful. The alternative <a href="https://github.com/asvetliakov/vscode-neovim">VSCode Neovim</a> extension may fare a bit better as it unbinds keystrokes from VS Code while not in insert mode and uses Neovim as a backend.</p>
 <h2 id="selection-commands">Selection commands</h2>
 <p>Calva's various structural selection commands <a href="https://github.com/BetterThanTomorrow/calva/issues/297">do not put VIM into VISUAL mode</a>. This is true for many <a href="https://github.com/VSCodeVim/Vim/issues/2224">VS Code selection scenarios</a> too, so it is not really Calva's fault, but it will be problematic for VIM Extension Calva users, regardless.</p>
 <h2 id="key-bindings">Key bindings</h2>
-<p>In general Calva's default key bindings are not very VI-ish. <strong>This is a call for someone to share their VIM re-mappings</strong>.</p>
+<p>In general Calva's default key bindings are not very VI-ish.</p>
+<p>You can add these keybindings to your <code>init.vim</code> if you are using the VSCode Neovim extension. It is inspired by and tries to emulate the keybindings found in <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a> which is the most popular vim plugin for clojure.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">nmap cqp :call VSCodeNotify(&#39;calva.jackIn&#39;)&lt;CR&gt;</span>
+<span class="err">nmap cqq :call VSCodeNotify(&#39;calva.disconnect&#39;)&lt;CR&gt;</span>
+<span class="err">nmap cpr :call VSCodeNotify(&#39;calva.loadFile&#39;)&lt;CR&gt;</span>
+<span class="err">nmap cpR :call VSCodeNotify(&#39;calva.loadNamespace&#39;)&lt;CR&gt;</span>
+<span class="err">nmap cpp :call VSCodeNotify(&#39;calva.evaluateSelection&#39;)&lt;CR&gt;</span>
+<span class="err">nmap cqc :call VSCodeNotify(&#39;calva.evalCurrentFormInREPLWindow&#39;)&lt;CR&gt;</span>
+</code></pre></div>
+
+
+<p>Unfortunately these key combinations will not work in the normal VIM extension as <code>c</code> is an <a href="https://github.com/VSCodeVim/Vim/issues/4464">operator key</a> and cannot be remapped. <strong>This is a call for someone to share their VIM re-mappings</strong>.</p>
 <h3 id="expand-selection">Expand selection</h3>
 <p>Calva binds <strong>expand selection</strong> to <code>ctrl+w</code>. This conflicts with the VIM Extension's default mapping of window splitting shortcuts. You'll need to remap it either with Calva or with the VIM Extension.</p>
 <h3 id="the-esc-key">The <code>esc</code> key</h3>
@@ -838,18 +849,18 @@
 <li>Open the Keyboard Shortcuts JSON file from the Command Palette</li>
 <li>Disable <code>clearInlineResults</code> and remap the command e.g.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="err">// Place your key bindings in this file to override the defaults</span>
-<span class="err">[</span>
-<span class="err">  {</span>
-<span class="err">    &quot;key&quot;: &quot;escape&quot;,</span>
-<span class="err">    &quot;command&quot;: &quot;-calva.clearInlineResults&quot;</span>
-<span class="err">  },</span>
-<span class="err">  {</span>
-<span class="err">    &quot;key&quot;: &quot;shift+escape&quot;,</span>
-<span class="err">    &quot;command&quot;: &quot;calva.clearInlineResults&quot;,</span>
-<span class="err">    &quot;when&quot;: &quot;editorTextFocus &amp;&amp; !editorHasMultipleSelections &amp;&amp; !editorReadOnly &amp;&amp; !hasOtherSuggestions &amp;&amp; !suggestWidgetVisible &amp;&amp; editorLangId == &#39;clojure&#39;&quot;</span>
-<span class="err">  },</span>
-<span class="err">]</span>
+<div class="codehilite"><pre><span></span><code><span class="err">//</span> <span class="err">Place</span> <span class="err">your</span> <span class="err">key</span> <span class="err">bindings</span> <span class="err">in</span> <span class="err">this</span> <span class="err">file</span> <span class="err">to</span> <span class="err">override</span> <span class="err">the</span> <span class="err">defaults</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;escape&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;-calva.clearInlineResults&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;shift+escape&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;calva.clearInlineResults&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;when&quot;</span><span class="p">:</span> <span class="s2">&quot;editorTextFocus &amp;&amp; !editorHasMultipleSelections &amp;&amp; !editorReadOnly &amp;&amp; !hasOtherSuggestions &amp;&amp; !suggestWidgetVisible &amp;&amp; editorLangId == &#39;clojure&#39;&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
 </code></pre></div>
 
 
