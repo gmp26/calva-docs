@@ -11,7 +11,7 @@
         <meta name="description" content="Learn how to use Calva to boost your Clojure and ClojureScript coding in VS Code.">
       
       
-        <link rel="canonical" href="https://calva.io/using-with/">
+        <link rel="canonical" href="https://calva.io/re-frame-template/">
       
       
       <link rel="shortcut icon" href="../img/favicon.ico">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Using Calva with X - Calva User Guide</title>
+        <title>How to Use Calva with the re-frame template - Calva User Guide</title>
       
     
     
@@ -54,7 +54,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-calva-with-x" class="md-skip">
+        <a href="#how-to-use-calva-with-the-re-frame-template" class="md-skip">
           Skip to content
         </a>
       
@@ -81,7 +81,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Using Calva with X
+              How to Use Calva with the re-frame template
             
           </span>
         </div>
@@ -436,10 +436,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Using Calva with X
@@ -514,6 +516,27 @@
     <a href="../luminus/" title="How to Use Calva with Luminus" class="md-nav__link">
       How to Use Calva with Luminus
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="How to Use Calva with the re-frame template" class="md-nav__link md-nav__link--active">
+      How to Use Calva with the re-frame template
+    </a>
+    
   </li>
 
         
@@ -645,7 +668,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/BetterThanTomorrow/calva-docs/edit/master/docs/using-with.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/BetterThanTomorrow/calva-docs/edit/master/docs/re-frame-template.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -653,16 +676,29 @@
                   
                 
                 
-                <h1 id="using-calva-with-x">Using Calva with X</h1>
-<p>Calva can be used in conjunction with many other Clojure related technologies and projects. Please consider contributing with guides about how you have set things up to achieve your workflow with this or that awesome thing.</p>
-<p>.. toctree::
-   :maxdepth: 3
-   :caption: Contents:</p>
-<p>rebl
-   vim
-   wsl
-   remote-development
-   luminus</p>
+                <h1 id="how-to-use-calva-with-the-re-frame-template">How to Use Calva with the re-frame template</h1>
+<p>To make it easy to start the app created by the <a href="https://github.com/day8/re-frame-template">re-frame template</a> add this Connect Sequence in the <code>.vscode/settings.json</code> of the project:</p>
+<div class="codehilite"><pre><span></span><code>    <span class="s2">&quot;calva.replConnectSequences&quot;</span><span class="err">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Leiningen -&gt; shadow-cljs&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;projectType&quot;</span><span class="p">:</span> <span class="s2">&quot;lein-shadow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cljsType&quot;</span><span class="p">:</span> <span class="s2">&quot;shadow-cljs&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;menuSelections&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;leinAlias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nt">&quot;leinProfiles&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;dev&quot;</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;cljsLaunchBuilds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;app&quot;</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;cljsDefaultBuild&quot;</span><span class="p">:</span> <span class="s2">&quot;app&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span><span class="err">,</span>
+</code></pre></div>
+
+
+<p>Then <strong>Jack-in</strong>.</p>
                 
               
               
@@ -677,6 +713,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../luminus/" title="How to Use Calva with Luminus" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                How to Use Calva with Luminus
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../workspace-layouts/" title="Workspace layouts" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Workspace layouts
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
