@@ -677,7 +677,12 @@
                 
                 
                 <h1 id="how-to-use-calva-with-the-re-frame-template">How to Use Calva with the re-frame template</h1>
-<p>To make it easy to start the app created by the <a href="https://github.com/day8/re-frame-template">re-frame template</a> add this Connect Sequence in the <code>.vscode/settings.json</code> of the project:</p>
+<p>To make it easy to start the app created by the <a href="https://github.com/day8/re-frame-template">re-frame template</a> use the <code>+calva</code> option when creating your project. In its plainest form that becomes:</p>
+<div class="codehilite"><pre><span></span><code>$ lein lein new re-frame &lt;app-name&gt; +calva
+</code></pre></div>
+
+
+<p>If you have a re-frame project created from the template w/o the <code>+calva</code> option and want to get the ease, add this Connect Sequence in the <code>.vscode/settings.json</code> of the project:</p>
 <div class="codehilite"><pre><span></span><code>    <span class="s2">&quot;calva.replConnectSequences&quot;</span><span class="err">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Leiningen -&gt; shadow-cljs&quot;</span><span class="p">,</span>

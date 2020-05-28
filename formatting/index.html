@@ -768,6 +768,10 @@
                 
                 <h1 id="formatting">Formatting</h1>
 <p>We have tried to make Calva's formatter so that it <em>just works</em>. It is enabled by default for Clojure files, and unconfigured it mostly follows Bozhidar Batsov's <a href="https://github.com/bbatsov/clojure-style-guide">Clojure Style Guide</a>. Calva uses <a href="https://github.com/weavejester/cljfmt">cljfmt</a> for the formatting.</p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>Calva's code formatter sets the default keybinding of its <strong>Format Current Form</strong> command to <code>tab</code>. Meaning that most often when things look a bit untidy, you can press <code>tab</code> to make things look pretty. Good to know, right? For performance reasons it only formats the current enclosing form, so sometimes you want to move the cursor up/out a form (<code>ctrl+up</code>) first. See <a href="../paredit/">The Paredit Guide</a> for more on moving the cursor structurally through your code.</p>
+</div>
 <p>With the default settings, Calva's formatting behaves like so:</p>
 <ul>
 <li>formats as you type (when entering new lines)</li>
