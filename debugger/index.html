@@ -383,8 +383,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upcoming" class="md-nav__link">
-    Upcoming
+  <a href="#future-goals" class="md-nav__link">
+    Future goals
   </a>
   
 </li>
@@ -497,6 +497,13 @@
   
     <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugger-hangs-when-stepping-over-infinite-seqs" class="md-nav__link">
+    Debugger hangs when stepping over infinite seqs
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#my-breakpoint-isnt-being-hit" class="md-nav__link">
@@ -863,8 +870,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upcoming" class="md-nav__link">
-    Upcoming
+  <a href="#future-goals" class="md-nav__link">
+    Future goals
   </a>
   
 </li>
@@ -979,6 +986,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#debugger-hangs-when-stepping-over-infinite-seqs" class="md-nav__link">
+    Debugger hangs when stepping over infinite seqs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#my-breakpoint-isnt-being-hit" class="md-nav__link">
     My breakpoint isn't being hit
   </a>
@@ -1031,7 +1045,7 @@
 <li>See variable values in the debugger side pane</li>
 <li>See variable values on hover in the editor</li>
 </ul>
-<h3 id="upcoming">Upcoming</h3>
+<h3 id="future-goals">Future goals</h3>
 <ul>
 <li>See structured variables in the debugger side pane (currently maps and collections are just shown as strings)</li>
 <li>Inject values into the debug context</li>
@@ -1101,6 +1115,15 @@
 <h3 id="loading-the-file-and-eval-on-save">Loading the File and "Eval On Save"</h3>
 <p>When you load a file, any breakpoints that were previously set in functions will be unset. If you have the "Eval On Save" setting enabled, your file is also loaded with each save, therefore saving the file will remove breakpoints previously set.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="debugger-hangs-when-stepping-over-infinite-seqs">Debugger hangs when stepping over infinite seqs</h3>
+<p>This is because the debugger tries to evaluate the form when it's stepped over, and if <code>clojure.core/*print-length*</code> is set to <code>nil</code> as it is by default, evaluation will never complete. If you want to debug a form with an infinite seq, make sure to set <code>*print-length*</code> beforehand. For example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nf">set!</span> <span class="nv">*print-length*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1">;; Or, to be more precise</span>
+<span class="p">(</span><span class="nf">set!</span> <span class="nv">clojure.core/*print-length*</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Calva does not set this for you during debug mode, instead leaving it up to you to decide the value.</p>
 <h3 id="my-breakpoint-isnt-being-hit">My breakpoint isn't being hit</h3>
 <p>It's likely that your breakpoint is in a place that cider-nrepl does not see as an appropriate place to break execution. For example, if you put a breakpoint before a literal number, it will not be hit, because there's no need to show the value of a literal.</p>
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">simple</span> <span class="p">[</span><span class="nv">x</span><span class="p">]</span>
