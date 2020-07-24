@@ -818,6 +818,10 @@
 <li>Answer the quick-pick prompts telling Calva about project types and what profiles to start.</li>
 </ol>
 <p>See also: <a href="../workspace-layouts/">Workspace Layouts</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must have a project file, such as <code>project.clj</code> for Leiningen or <code>deps.edn</code> for Clojure CLI, in the directory opened in VS Code in order for jack-in to work.</p>
+</div>
 <h3 id="aliases-profiles-builds">Aliases, profiles, builds</h3>
 <p>When Jack-in starts it will depend on the project type, and whether ClojureScript is involved or not, and if it is, what kind of ClojureScript project, what will happen next. Calva will analyze the project files and will then give you prompts with selections based on what is found there.</p>
 <p>You will need some basic knowledge about the project and the project type terminologies to answer the prompts.</p>
