@@ -358,6 +358,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../output/" title="The Output/REPL Window/File" class="md-nav__link">
+      The Output/REPL Window/File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../formatting/" title="Formatting" class="md-nav__link">
       Formatting
     </a>
@@ -755,32 +767,35 @@
                 <h1 id="something-to-try-first-after-connecting">Something to Try First (After Connecting)</h1>
 <p>You should start with loading the file you are working with. Do this with <strong>Loading Current File and Dependencies</strong>, <code>ctrl+alt+c enter</code>.</p>
 <p>To get a feeling for evaluating code in the editor and get immediate response from the REPL try this:</p>
-<ol>
-<li>
-<p>On a new line, type a <code>comment</code> form and put some code inside it:
-    <code>(comment
-      (+ (* 2 2)
-         2)
-      (Math/abs -1)
-      (hello "Calva REPL")
-      (defn hello [s]
-        (str "Hello " s))
-      (range 10)
-      "I ♥️ Clojure")</code></p>
-</li>
-<li>
-<p>Place the cursor behind the form <code>(* 2 2)</code> and issue the command <strong>Calva: Evaluate Current Form</strong>, <code>ctrl+alt+c e</code> (<code>ctrl+alt+c v</code> on Windows).</p>
 <ul>
+<li>On a new line, type a <code>comment</code> form and put some code inside it:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nf">comment</span>
+  <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="mi">2</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">Math/abs</span> <span class="mi">-1</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">hello</span> <span class="s">&quot;Calva REPL&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span> <span class="nv">s</span><span class="p">))</span>
+  <span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">)</span>
+  <span class="s">&quot;I ♥️ Clojure&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Then:</p>
+<ol>
+<li>Place the cursor behind the form <code>(* 2 2)</code> and issue the command <strong>Calva: Evaluate Current Form</strong>, <code>ctrl+enter</code>.<ul>
 <li>You should see the result being displayed inline. Press <code>esc</code> to dismiss it.</li>
 </ul>
 </li>
-<li>Now issue the command <strong>Evaluate Current Top Level Form (defun)</strong>, <code>ctrl+alt+c space</code>.<ul>
+<li>Now issue the command <strong>Evaluate Current Top Level Form (defun)</strong>, <code>alt+enter</code>.<ul>
 <li>You should see the whole form <code>(+ (* 2 2) 2)</code> getting highlighted and the result of that expression being displayed inline.</li>
 </ul>
 </li>
 <li>Evaluate each form inside the comment form using the <strong>Top Level</strong> command.<ul>
 <li>You should see each one of them evaluated.</li>
-<li>Evaluating the <code>(hello "Calva REPL")</code> form before the <code>(defn hello...</code> form should result in an error/exception. Try it again after having evaluated the <code>defn</code>form.</li>
+<li>Evaluating the <code>(hello "Calva REPL")</code> form before the <code>(defn hello...</code> form should result in an error/exception. A stacktrace is then printed in the <a href="../output/">output window</a></li>
+<li>Try it again after having evaluated the <code>defn</code>form.</li>
 </ul>
 </li>
 </ol>

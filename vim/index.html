@@ -307,6 +307,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../output/" title="The Output/REPL Window/File" class="md-nav__link">
+      The Output/REPL Window/File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../formatting/" title="Formatting" class="md-nav__link">
       Formatting
     </a>
@@ -565,13 +577,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#no-vim-mode-for-the-repl-window" class="md-nav__link">
-    No Vim mode for the REPL Window
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -819,13 +824,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#no-vim-mode-for-the-repl-window" class="md-nav__link">
-    No Vim mode for the REPL Window
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -847,7 +845,7 @@
                 
                 
                 <h1 id="calva-and-the-vim-extension">Calva and the VIM Extension</h1>
-<p>First thing first. The <a href="https://github.com/VSCodeVim/Vim">VIM Extension</a> and Calva has some friction between them. Expect it to be a bit painful. The alternative <a href="https://github.com/asvetliakov/vscode-neovim">VSCode Neovim</a> extension may fare a bit better as it unbinds keystrokes from VS Code while not in insert mode and uses Neovim as a backend.</p>
+<p>First thing first. The <a href="https://github.com/VSCodeVim/Vim">VIM Extension</a> and Calva has some friction between them. The alternative <a href="https://github.com/asvetliakov/vscode-neovim">VSCode Neovim</a> extension may fare a bit better as it unbinds keystrokes from VS Code while not in insert mode and uses Neovim as a backend.</p>
 <h2 id="selection-commands">Selection commands</h2>
 <p>Calva's various structural selection commands <a href="https://github.com/BetterThanTomorrow/calva/issues/297">do not put VIM into VISUAL mode</a>. This is true for many <a href="https://github.com/VSCodeVim/Vim/issues/2224">VS Code selection scenarios</a> too, so it is not really Calva's fault, but it will be problematic for VIM Extension Calva users, regardless.</p>
 <h2 id="key-bindings">Key bindings</h2>
@@ -901,8 +899,6 @@
 
 
 <p>(Change <code>before</code> to whatever keybinding you are comfortable with!)</p>
-<h2 id="no-vim-mode-for-the-repl-window">No Vim mode for the REPL Window</h2>
-<p>This is not likely to be fixed anytime soon. (Because, a <strong>lot</strong> of work.)</p>
                 
               
               
