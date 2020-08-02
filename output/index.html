@@ -351,6 +351,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#peek-at-results" class="md-nav__link">
+    Peek at Results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stacktraces" class="md-nav__link">
     Stacktraces
   </a>
@@ -780,6 +787,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#peek-at-results" class="md-nav__link">
+    Peek at Results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stacktraces" class="md-nav__link">
     Stacktraces
   </a>
@@ -873,6 +887,16 @@
 <p>then evaluate it using <code>alt+enter</code>, you'll get:</p>
 <p><img alt="eval-results-2" src="../images/howto/output/eval-results-2.png" /></p>
 <p>This, since the namespace ”followed” the first evaluation over to the output window.</p>
+<h2 id="peek-at-results">Peek at Results</h2>
+<p>On smaller screens (or just depending on your taste) you might not have the output window visible side-by-side with your code, but rather in a tab in the same editor group.</p>
+<p>Then your immediate feedback will be the inline display, which is limited to the first line of the results. All is not lost, however, you can peek at the full results using VS Code's command <strong>Peek Definition</strong>. Calva adds a definition pointer ”in” to the evaluated code in the output window.</p>
+<p><img alt="Peek at results" src="../images/howto/output/peek-last-result.gif" /></p>
+<p>(On Mac the default keyboard shortcut for the peek command is <code>alt+f12</code>.)</p>
+<p>In the demo gif we utilize two things about this peek widgets:</p>
+<ol>
+<li>It stays open until you close it. So you can keep evaluate different versions of your form and see the results get printed.</li>
+<li>The widget displays a ”full” Calva editor, so you can use Paredit to conveniently select forms.</li>
+</ol>
 <h2 id="stacktraces">Stacktraces</h2>
 <p>When an evaluation produces an error, the output window will automatically print the stacktrace (when available). It will be printed as an EDN structure. And when source locations are available you will be able to navigate to them by <code>command+click</code> (Mac) or <code>ctrl+click</code> (Windows and Linux).</p>
 <h2 id="find-the-outputrepl-window">Find the Output/REPL Window</h2>
