@@ -802,7 +802,7 @@
 <li>formats the current enclosing form when you hit <code>tab</code></li>
 <li>formats pasted code</li>
 <li>formats according to community standards (see above link)</li>
-<li>formats the current form, <em>aligning map key, values</em>, when you press <code>ctrl+alt+l</code>.</li>
+<li>formats the current form, <em>aligning map keys and values</em>, when you press <code>ctrl+alt+l</code>.</li>
 </ul>
 <p>Also: If you have <strong>Format on Save</strong> enabled in VS Code, it will be Calva doing the formatting for Clojure files.</p>
 <p>Calva's formatting is mostly about indenting, but it also (again, defaults):</p>
@@ -840,11 +840,11 @@
 <p>(This particular setting is experimental and known to cause trouble together with namespaced keywords. Consider using <code>ctrl+alt+l</code> instead of <code>tab</code> as your formatting command, instead of enabling this setting.)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The hot reloading of the config file does only work for config files inside the project directory structure.</p>
+<p>The hot reloading of the config file only works for config files inside the project directory structure.</p>
 </div>
 <h3 id="indentation-rules">Indentation rules</h3>
 <p>The <code>cljfmt</code> indents are highly configurable. They, and the rest of the configuration options, are masterly detailed <a href="https://github.com/weavejester/cljfmt#configuration">here</a>.</p>
-<p>Calva is an extra good tool for experimenting with these settings. <code>cljfmt</code> doesn't care about keys in the map that it doesn't now about so you can sneak in test code there to quickly see how it will get formatted by certain rules. Try this, for instance:</p>
+<p>Calva is an extra good tool for experimenting with these settings. <code>cljfmt</code> doesn't care about keys in the map that it doesn't know about so you can sneak in test code there to quickly see how it will get formatted by certain rules. Try this, for instance:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="ss">:remove-surrounding-whitespace?</span> <span class="nv">true</span>
  <span class="ss">:remove-trailing-whitespace?</span> <span class="nv">true</span>
  <span class="ss">:remove-consecutive-blank-lines?</span> <span class="nv">false</span>
@@ -868,7 +868,7 @@
 </code></pre></div>
 
 
-<p>That's somewhat similar to Nikita Prokopov's <a href="https://tonsky.me/blog/clojurefmt/">Better Clojure Formatting</a> suggestion. (Please be aware that this setting might not be sufficient to get complete <strong>Tonsky Formatting</strong>, please share any settings you do to get full compliance.)</p>
+<p>That's somewhat similar to Nikita Prokopov's <a href="https://tonsky.me/blog/clojurefmt/">Better Clojure Formatting</a> suggestion. (Please be aware that this setting might not be sufficient to get complete <strong>Tonsky Formatting</strong>, please share any settings you use to get full compliance.)</p>
 <h2 id="under-construction">Under Construction</h2>
 <p>Much of this formatting configurability is recent work. There might be dragons. And also, we probably should make Calva pick the <code>:cljfmt</code> config up from Leiningen project files. If you agree, and there isn't an issue about that already, please file one.</p>
                 

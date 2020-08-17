@@ -837,27 +837,27 @@
 <tr>
 <td><code>enabled</code></td>
 <td>boolean</td>
-<td>so this is a third way you can change this mode 😄</td>
+<td>So this is a third way you can change this mode 😄</td>
 </tr>
 <tr>
 <td><code>printEngine</code></td>
 <td>enum</td>
-<td>which printer function that will be used. Default is <code>pprint</code>, more about this setting below</td>
+<td>Which printer function that will be used. Default is <code>pprint</code>, more about this setting below</td>
 </tr>
 <tr>
 <td><code>width</code></td>
 <td>number</td>
-<td>the maximum line length of printed output (or at least the printers will try)</td>
+<td>The maximum line length of printed output (or at least the printers will try)</td>
 </tr>
 <tr>
 <td><code>maxLength</code></td>
 <td>number</td>
-<td>the maximum number of elements printed in nested nodes, <a href="https://clojuredocs.org/clojure.core/*print-length*#example-542692cac026201cdc326b12">good for evaluating something like <code>(iterate inc 0)</code></a>, which you shouldn't do without setting <code>maxLength</code>. Most printers will indicate truncated lists with <code>...</code> at the end.</td>
+<td>The maximum number of elements printed in nested nodes, <a href="https://clojuredocs.org/clojure.core/*print-length*#example-542692cac026201cdc326b12">good for evaluating something like <code>(iterate inc 0)</code></a>, which you shouldn't do without setting <code>maxLength</code>. Most printers will indicate truncated lists with <code>...</code> at the end.</td>
 </tr>
 <tr>
 <td><code>maxDepth</code></td>
 <td>number</td>
-<td>the maximum number of levels deep that will get printed. Different printers mark a stop different ways. <code>puget</code> doesn't support it at all.</td>
+<td>The maximum number of levels deep that will get printed. Different printers mark a stop different ways. <code>puget</code> doesn't support it at all.</td>
 </tr>
 </tbody>
 </table>
@@ -882,12 +882,12 @@
 <tr>
 <td><code>calva</code></td>
 <td>client</td>
-<td>i.e. the nREPL server will plain print the results, and then Calva will pretty it.</td>
+<td>The nREPL server will plain print the results, and then Calva will pretty it.</td>
 </tr>
 <tr>
 <td><a href="https://clojure.github.io/clojure/clojure.pprint-api.html"><code>pprint</code></a></td>
 <td>server</td>
-<td>current Calva default (<code>clojure.core/pprint</code> is a bit basic, but it's tried and tested, and has none of the server side printing issues mentioned below.</td>
+<td>Current Calva default (<code>clojure.core/pprint</code> is a bit basic, but it's tried and tested, and has none of the server side printing issues mentioned below.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/brandonbloom/fipp"><code>fipp</code></a></td>
@@ -906,15 +906,15 @@
 </tr>
 </tbody>
 </table>
-<p>It is this particular selection of server side functions, because they have pre-configured print-functions in <a href="https://docs.cider.mx/cider-nrepl/"><code>cider-nrepl</code></a>.</p>
+<p>These particular server side functions were chosen because they have pre-configured print-functions in <a href="https://docs.cider.mx/cider-nrepl/"><code>cider-nrepl</code></a>.</p>
 <h3 id="why-does-server-or-client-side-matter">Why does Server or Client Side Matter?</h3>
-<p>This matters because on the server all pretty printers, except <code>pprint</code> does more than just pretty print the result that would be printed with plain printing. Pretty printing results on the server causes some results to get expanded. This can have huge implications depending on the results and which printer is used. E.g. for <a href="https://www.datomic.com">Datomic</a> transaction results, you will get the whole database printed. Twice. Depending on the database, you could be so unlucky that nothing gets printed, instead you will soon have a very hot computer.</p>
+<p>This matters because on the server all pretty printers, except <code>pprint</code> does more than just pretty print the result that would be printed with plain printing. Pretty printing results on the server causes some results to get expanded. This can have huge implications depending on the results and which printer is used. E.g. for <a href="https://www.datomic.com">Datomic</a> transaction results, you will get the whole database printed. Twice. Depending on the database, you could be so unlucky that nothing gets printed, and instead you will soon have a very hot computer.</p>
 <blockquote>
-<p>Note: With the help of zprint creator, <a href="https://github.com/kkinnear">Kim Kinnear</a>, we have <a href="https://github.com/kkinnear/zprint/issues/111">found ways</a> to compensate for this problems. Ways that are not yet implemented, but please stay tuned.</p>
+<p>Note: With the help of zprint creator, <a href="https://github.com/kkinnear">Kim Kinnear</a>, we have <a href="https://github.com/kkinnear/zprint/issues/111">found ways</a> to compensate for this problem. Ways that are not yet implemented, but please stay tuned.</p>
 </blockquote>
-<p>Then, why not always do it client side? It turns out that on the client side there are also things going on. Calva gets the results back as a string and therefore it needs to first be parsed back to <a href="https://github.com/edn-format/edn">EDN</a>, before it can be pretty printed by <code>zprint</code>. And – here's the catch – all results are not valid EDN and therefore can't be pretty printed by <code>zprint</code>. Datomic transaction results are one example.</p>
+<p>Then why not always do it client side? It turns out that on the client side there are also things going on. Calva gets the results back as a string and therefore it needs to first be parsed back to <a href="https://github.com/edn-format/edn">EDN</a>, before it can be pretty printed by <code>zprint</code>. And – here's the catch – all results are not valid EDN and therefore can't be pretty printed by <code>zprint</code>. Datomic transaction results are one example.</p>
 <h3 id="need-more-configurability">Need More Configurability?</h3>
-<p>The current options are limited, because our time developing Calva is limited. But <code>cider-nrepl</code> really allows for fully configurable pretty printing, so it is within reach. Please feel invited to give us feedback on what you would want to configure for the printing of results. File issues and/or chat us up in #calva on the Clojurians slack.</p>
+<p>The current options are limited, because our time developing Calva is limited. But <code>cider-nrepl</code> really allows for fully configurable pretty printing, so it is within reach. Please feel invited to give us feedback on what you would want to configure for the printing of results. File issues and/or chat us up in #calva in the Clojurians slack.</p>
 <p>Enjoy Prettiful Printing! ❤️</p>
                 
               

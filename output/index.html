@@ -957,9 +957,9 @@
 <p>Then your immediate feedback will be the inline display, which is limited to the first line of the results. All is not lost, however, you can peek at the full results using VS Code's command <strong>Peek Definition</strong>. Calva adds a definition pointer ”in” to the evaluated code in the output window.</p>
 <p><img alt="Peek at results" src="../images/howto/output/peek-last-result.gif" /></p>
 <p>(On Mac the default keyboard shortcut for the peek command is <code>alt+f12</code>.)</p>
-<p>In the demo gif we utilize two things about this peek widgets:</p>
+<p>In the demo gif we utilize two things about this peek widget:</p>
 <ol>
-<li>It stays open until you close it. So you can keep evaluate different versions of your form and see the results get printed.</li>
+<li>It stays open until you close it. So you can keep evaluating different versions of your form and see the results get printed.</li>
 <li>The widget displays a ”full” Calva editor, so you can use Paredit to conveniently select forms.</li>
 </ol>
 <h2 id="stacktraces">Stacktraces</h2>
@@ -976,7 +976,7 @@
 <p>The contents of the output/REPL window is written to a file named <code>output.repl</code> in the <code>.calva/output-window</code> directory of your project. The file is recreated at every new session. And you should copy anything you want to keep from this file to wherever you want to keep it.</p>
 <p>You probably want to add <code>.calva/output-window/</code> to your <code>.&lt;something&gt;ignore</code> files. (There are some more files in that directory that you shouldn't keep under source control.)</p>
 <h2 id="choose-clj-or-cljs-repl-connection">Choose CLJ or CLJS REPL Connection</h2>
-<p>In full stack projects, you will probably use the window as a REPL for both for <code>clj</code> and <code>cljs</code> project. You can toggle which REPL the window is connected to using the the command <strong>Calva: Toggle REPL Connection for CLJC files</strong>. There is a button for this in the status bar:</p>
+<p>In full stack projects, you will probably use the window as a REPL for both <code>clj</code> and <code>cljs</code>. You can toggle which REPL the window is connected to using the command <strong>Calva: Toggle REPL Connection for CLJC files</strong>. There is a button for this in the status bar:</p>
 <p><img alt="Toggle CLJC" src="../images/howto/cljc-toggle-button.png" /></p>
 <h2 id="known-quirks">Known Quirks</h2>
 <p>Due to limitations in the VS Code API it is hard for Calva to know if the output file is opened, and also if it is opened more than once. Make it a habit to leave this window opened. And if it is opened in several tabs, expect evaluation printouts to be a bit unpredictable.</p>
