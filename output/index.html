@@ -351,6 +351,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#repl-history" class="md-nav__link">
+    REPL History
+  </a>
+  
+    <nav class="md-nav" aria-label="REPL History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigate-repl-history" class="md-nav__link">
+    Navigate REPL History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-repl-history" class="md-nav__link">
+    Clear REPL History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#peek-at-results" class="md-nav__link">
     Peek at Results
   </a>
@@ -787,6 +814,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#repl-history" class="md-nav__link">
+    REPL History
+  </a>
+  
+    <nav class="md-nav" aria-label="REPL History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigate-repl-history" class="md-nav__link">
+    Navigate REPL History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-repl-history" class="md-nav__link">
+    Clear REPL History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#peek-at-results" class="md-nav__link">
     Peek at Results
   </a>
@@ -863,10 +917,6 @@
                 
                 
                 <h1 id="the-outputrepl-windowfile">The Output/REPL Window/File</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As of version <strong>v2.0.109</strong> the old REPL Window was replaced by the new one described below. Read <a href="https://clojureverse.org/t/calva-summer-of-bugs-2020/">this article on ClojureVerse</a> for some of the rationale behind the change.</p>
-</div>
 <p>When Calva evaluates Clojure/ClojureScript code, the results are displayed inline as well as printed to the results output window/file. This file is created and opened when Calva is connected to a REPL.</p>
 <p>In ClojureScript projects the window will be associated with the <code>cljs</code> REPL once this one is connected. It will then look something like so:</p>
 <p><img alt="Output Window Connected" src="../images/howto/output/output-window-connected.png" /></p>
@@ -891,6 +941,13 @@
 <p>then evaluate it using <code>alt+enter</code>, you'll get:</p>
 <p><img alt="eval-results-2" src="../images/howto/output/eval-results-2.png" /></p>
 <p>This, since the namespace ”followed” the first evaluation over to the output window.</p>
+<h2 id="repl-history">REPL History</h2>
+<p>Recently evaluated forms in the REPL file are persisted and can easily be shown again for modifying and re-evaluating.</p>
+<h3 id="navigate-repl-history">Navigate REPL History</h3>
+<p>You can navigate up and down the last forms evaluated in the REPL file by using <code>alt+up</code> and <code>alt+down</code>, provided your cursor is at the end of the last form after the prompt. If the cursor is not at the end of the last form, then <code>alt+up</code> and <code>alt+down</code> will do what they are mapped to, which is by default "Move Line Up" and "Move Line Down," respectively.</p>
+<p>If you have typed some text after the prompt before you start traversing up the history, this text will be preserved and will display when you traverse back down the history. If you modify some text in the history while traversing, the modification will be saved at that location in history.</p>
+<h3 id="clear-repl-history">Clear REPL History</h3>
+<p>You can clear the repl history by running the command "Clear REPL History" from the command palette.</p>
 <h2 id="peek-at-results">Peek at Results</h2>
 <p>On smaller screens (or just depending on your taste) you might not have the output window visible side-by-side with your code, but rather in a tab in the same editor group.</p>
 <p>Then your immediate feedback will be the inline display, which is limited to the first line of the results. All is not lost, however, you can peek at the full results using VS Code's command <strong>Peek Definition</strong>. Calva adds a definition pointer ”in” to the evaluated code in the output window.</p>
@@ -912,7 +969,7 @@
 <p>The output window is mostly a regular... (you get it), which means you also have the <a href="../debugger/">Calva debugger</a> at your command at the REPL prompt (only for <code>clj</code> sessions, so far). So instead of evaluating a function definition using <code>alt+enter</code> you can evaluate it and instrument it for debugging using <code>ctrl+alt+c i</code>. Then call the function.</p>
 <p><img alt="repl-file debugger" src="../images/howto/output/repl-file-debugger.png" /></p>
 <h2 id="it-is-ephemeral">It is Ephemeral</h2>
-<p>The contents of the output/REPL window is written to a file named <code>output.repl-file</code> in the <code>.calva/output-window</code> directory of your project. The file is recreated at every new session. And you should copy anything you want to keep from this file to wherever you want to keep it.</p>
+<p>The contents of the output/REPL window is written to a file named <code>output.repl</code> in the <code>.calva/output-window</code> directory of your project. The file is recreated at every new session. And you should copy anything you want to keep from this file to wherever you want to keep it.</p>
 <p>You probably want to add <code>.calva/output-window/</code> to your <code>.&lt;something&gt;ignore</code> files. (There are some more files in that directory that you shouldn't keep under source control.)</p>
 <h2 id="choose-clj-or-cljs-repl-connection">Choose CLJ or CLJS REPL Connection</h2>
 <p>In full stack projects, you will probably use the window as a REPL for both for <code>clj</code> and <code>cljs</code> project. You can toggle which REPL the window is connected to using the the command <strong>Calva: Toggle REPL Connection for CLJC files</strong>. There is a button for this in the status bar:</p>
