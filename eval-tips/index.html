@@ -835,7 +835,6 @@
                 <h1 id="code-evaluation-tips">Code Evaluation Tips</h1>
 <p>Calva tries to make it easy to evaluate code, supporting interactive development.</p>
 <p>NB: <em>The below assumes you have read about <a href="../finding-commands/">Finding Calva Commands and Shortcuts</a>.</em></p>
-<p>There are some different ”flavors” to the evaluation. And it depends on if you are evaluating in a file editor or a in a REPL window.</p>
 <h2 id="evaluation-in-a-file-editor">Evaluation in a File Editor</h2>
 <p>Calva has commands for evaluating the <strong>current form</strong> and the <strong>current top-level form</strong>.</p>
 <p>You can also choose what should happen with the results:</p>
@@ -850,7 +849,7 @@
 <p>The current form either means the current selection, or otherwise is based on the cursor position. Play some with the command <strong>Calva: Select current form</strong>, <code>ctrl+alt+c s</code>, to figure out what Calva thinks is the current form for some different situations. Try it inside a symbol, adjacent to a symbol (both sides) and adjacent to an opening or closing bracket (again, both sides).</p>
 <h3 id="current-top-level-form">Current Top-level Form</h3>
 <p>The current top-level form means top-level in a structural sense. It is <em>not</em> the topmost form in the file. Typically in a Clojure file you will find <code>def</code> and <code>defn</code> (and <code>defwhatever</code>) forms at the top level, but it can be any form not enclosed in any other form.</p>
-<p>An exception is the <code>comment</code> form. It will create a new top level context, so that any forms immediatlly inside a <code>(commment ...)</code> form will be considered top-level by Calva. This is to support a workflow where you</p>
+<p>An exception is the <code>comment</code> form. It will create a new top level context, so that any forms immediately inside a <code>(commment ...)</code> form will be considered top-level by Calva. This is to support a workflow where you</p>
 <ol>
 <li>Iterate on your functions.</li>
 <li>Evaluate the function (top level).</li>
@@ -860,16 +859,10 @@
 <p>Here's a demo of the last repetition of such a workflow, for a simple implementation of the <code>abs</code> function:</p>
 <p><img alt="top-level-eval" src="../images/howto/top-level-eval.gif" /></p>
 <h3 id="copying-the-inline-results">Copying the inline results</h3>
-<p>The easiest way is to use the <strong>Copy</strong> button in the result hover. There is also the <strong>Copy last evaluation results</strong> command, <code>ctrl+alt+c ctrl+c</code>.</p>
+<p>There is a command called <strong>Copy last evaluation results</strong>, <code>ctrl+alt+c ctrl+c</code>.</p>
 <p>This works regardless if you have evaluated in a file editor or in a REPL window.</p>
 <h2 id="evaluating-in-a-repl-window">Evaluating in a REPL window</h2>
-<p>To evaluate code in the REPL window either send a form from the editor (as mentioned above) or type it at the prompt and submit it. There is also a repl history that you can access with <code>alt+up/down</code>.</p>
-<p>Note that the repl prompt is a <em>multiline</em> mini Clojure editor. So if you press <code>enter</code> while the cursor is not at the end of the line, it will create a new line. To submit the code at the prompt you have three options:</p>
-<ol>
-<li>Place the cursor at the end of the all the code, <code>end</code> (<code>fn+right</code> on Macs lacking an <code>end</code> key).</li>
-<li>Press <code>alt+enter</code>. This submits and prints the results un-altered.</li>
-</ol>
-<p>See also above about sending forms from the file editors to the REPL window for evaluation.</p>
+<p>Since the REPL Window is mostly just a regular file, things work pretty similar at the REPL prompt. You use <code>alt+enter</code> to evaluate. Selecting the current form (default key binding <code>ctrl+w</code> after evaluating will select the result.</p>
                 
               
               

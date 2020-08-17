@@ -751,39 +751,36 @@
                 
                 
                 <h1 id="the-top-10-calva-commands">The Top 10 Calva Commands</h1>
-<p>There are not all that many Calva commands, you can learn them all. But there are a few anyway and not all commands are created equal. Here are the most important ones to know about for effective Clojure/ClojureScript coding:</p>
+<p>There are not all that many Calva commands. You can learn them all if you like, but here are the most important ones to know about for effective Clojure/ClojureScript coding:</p>
 <ul>
 <li><strong>Grow/expand selection</strong>: <code>ctrl+w</code></li>
 <li><strong>Load current file</strong>: <code>alt+ctrl+c enter</code>, evaluates the namespace code in the active editor tab. This also loads any required namespaces, and generally gives Calva what it needs to work.</li>
-<li><strong>Evaluate current form</strong>:  <code>alt+ctrl+c e</code> (<code>alt+ctrl+c v</code> on Windows), finds the form from the cursor position, evaluates it and displays the result inline. Hit <code>esc</code> to dismiss the results display.</li>
-<li><strong>Evaluate current top-level form</strong>: <code>alt+ctrl+c space</code>: inline evaluate the current top-level form. This also works inside <code>(comment)</code> forms. Use it to (re)define vars and then inside comment forms you can verify that they do what you want them to do.</li>
+<li><strong>Evaluate current form</strong>:  <code>ctrl+enter</code> finds the form from the cursor position, evaluates it and displays the result inline. Hit <code>esc</code> to dismiss the results display.</li>
+<li><strong>Evaluate current top-level form</strong>: <code>alt+enter</code>: inline evaluate the current top-level form. This also works inside <code>(comment)</code> forms. Use it to (re)define vars and then inside comment forms you can verify that they do what you want them to do.</li>
 <li><strong>Dismiss the display of results</strong>: <code>escape</code>: (VIM Extension users should read <a href="../vim/">Using Calva with the VIM Extension</a>).</li>
 </ul>
-<p>The evaluation commands often have an equivalent for when you want to use the REPL window for further exploration. (Basically you add the <code>ctrl+alt</code> modifier to the second chord in the shortcuts):</p>
+<p>There are also two commands for bringing over the current form and the current top level form over to the repl window:</p>
 <ul>
-<li><code>alt+ctrl+c ctrl+alt+e</code>: to evaluate the current form in the REPL window.</li>
-<li><code>alt+ctrl+c ctrl+alt+space</code>: to evaluate the current top-level form in this window</li>
-<li>
-<p><strong>Load current namespace in the REPL window</strong> <code>alt+ctrl+c ctrl+alt+n</code></p>
-</li>
-<li>
-<p><strong>Toggle pretty printing</strong> of results on and off: <code>ctrl+alt+c p</code>. It's on by default. There is a status bar button showing the status and that also can be used to toggle the setting.</p>
-</li>
+<li><code>ctrl+alt+c ctrl+alt+e</code> (<code>ctrl+alt+c ctrl+alt+v</code> on Windows): to paste the current form in the REPL window.</li>
+<li><code>ctrl+alt+c ctrl+alt+space</code>: to paste the current top-level form in this window</li>
+</ul>
+<p>You can also switch the name space of the output/repl window to that of the current file: <code>alt+ctrl+c alt+n</code></p>
+<ul>
+<li><strong>Toggle pretty printing</strong> of results on and off: <code>ctrl+alt+c p</code>. It's on by default. There is a status bar button showing the status and that also can be used to toggle the setting.</li>
 </ul>
 <h2 id="some-more-commands-to-try">Some More Commands to Try</h2>
 <ul>
 <li>Code evaluation<ul>
-<li>Evaluate code and add as comment: <code>ctrl+alt+c c</code> (current form), <code>ctrl+alt+c ctrl space</code> (current <em>top level</em> form)</li>
+<li>Evaluate code and add as comment: <code>ctrl+alt+c c</code> (current form), <code>ctrl+alt+c ctrl+space</code> (current <em>top level</em> form)</li>
 <li>Evaluate code and replace it in the editor, inline: <code>ctrl+alt+c r</code></li>
 </ul>
 </li>
 <li>Integrated REPLs<ul>
-<li>Load current namespace in the REPL window: <code>ctrl+alt+c ctrl+alt+n</code></li>
-<li>Evaluate current editor form in the REPL window: <code>ctrl+alt+c ctrl+alt+e</code> (<code>ctrl+alt+c ctrl+alt+v</code> on Windows)</li>
-<li>Evaluate current editor top level form in the REPL window: <code>ctrl+alt+c ctrl+space</code></li>
+<li>Send current editor form to the REPL window: <code>ctrl+alt+c ctrl+alt+e</code> (<code>ctrl+alt+c ctrl+alt+v</code> on Windows)</li>
+<li>Send current editor <em>top level</em> form to the REPL window: <code>ctrl+alt+c ctrl+alt+space</code></li>
 </ul>
 </li>
-<li>Running tests and mark failures and errors in the Problems pane<ul>
+<li>Run tests and mark failures and errors in the Problems pane<ul>
 <li>Run namespace tests: <code>ctrl+alt+c t</code></li>
 <li>Run all tests: <code>ctrl+alt+c shift+t</code></li>
 <li>Run current test: <code>ctrl+alt+c ctrl+alt+t</code></li>
