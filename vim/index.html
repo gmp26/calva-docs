@@ -850,7 +850,7 @@
 <p>Calva's various structural selection commands <a href="https://github.com/BetterThanTomorrow/calva/issues/297">do not put VIM into VISUAL mode</a>. This is true for many <a href="https://github.com/VSCodeVim/Vim/issues/2224">VS Code selection scenarios</a> too, so it is not really Calva's fault, but it will be problematic for VIM Extension Calva users, regardless.</p>
 <h2 id="key-bindings">Key bindings</h2>
 <p>In general Calva's default key bindings are not very VI-ish.</p>
-<p>You can add these keybindings to your <code>init.vim</code> if you are using the VSCode Neovim extension. It is inspired by and tries to emulate the keybindings found in <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a> which is the most popular vim plugin for clojure.</p>
+<p>You can add these keybindings to your <code>init.vim</code> if you are using the VSCode Neovim extension. It is inspired by and tries to emulate the keybindings found in <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a> which is the most popular vim plugin for Clojure.</p>
 <div class="codehilite"><pre><span></span><code><span class="err">nmap cqp :call VSCodeNotify(&#39;calva.jackIn&#39;)&lt;CR&gt;</span>
 <span class="err">nmap cqq :call VSCodeNotify(&#39;calva.disconnect&#39;)&lt;CR&gt;</span>
 <span class="err">nmap cpr :call VSCodeNotify(&#39;calva.loadFile&#39;)&lt;CR&gt;</span>
@@ -864,7 +864,7 @@
 <h3 id="expand-selection">Expand selection</h3>
 <p>Calva binds <strong>expand selection</strong> to <code>ctrl+w</code>. This conflicts with the VIM Extension's default mapping of window splitting shortcuts. You'll need to remap it either with Calva or with the VIM Extension.</p>
 <h3 id="the-esc-key">The <code>esc</code> key</h3>
-<p>Calva binds the <code>esc</code> key to dismiss the display of inline results. This gets into conflict with any <code>vi</code> coding since <code>esc</code> then is used to go back to command mode. You can either fix Calva's default keybinding or the VIM extension.</p>
+<p>Calva binds the <code>esc</code> key to dismiss the display of inline results. This gets into conflict with any <code>vi</code> coding since <code>esc</code> then is used to go back to command mode. You can either change Calva's default keybinding or the VIM extension's.</p>
 <p>Alternatively, you can use the native Vim command <code>Ctrl + [</code> to escape and get back to command mode. Rebinding your keyboard's CapsLock key to Control may make this even easier.</p>
 <h4 id="remap-calvas-clearinlineresults">Remap Calva's <code>clearInlineResults</code></h4>
 <ul>
