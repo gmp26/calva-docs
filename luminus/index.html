@@ -600,8 +600,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../re-frame-template/" title="How to Use Calva with the re-frame template" class="md-nav__link">
-      How to Use Calva with the re-frame template
+    <a href="../re-frame-template/" title="How to Use Calva With the re-frame Template" class="md-nav__link">
+      How to Use Calva With the re-frame Template
     </a>
   </li>
 
@@ -642,8 +642,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workspace-layouts/" title="Workspace layouts" class="md-nav__link">
-      Workspace layouts
+    <a href="../workspace-layouts/" title="Workspace Layouts" class="md-nav__link">
+      Workspace Layouts
     </a>
   </li>
 
@@ -810,9 +810,10 @@
 <li>Select to start <strong>Server + Client – my-luminus-shadow</strong>, and wait for the <em>Terminal</em> <strong>Calva Jack-in</strong> output to say <code>[:app] Build completed.</code></li>
 <li>Open <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in your web browser and start hacking.</li>
 </ol>
-<blockquote>
-<p>Note: Currently Calva has troubles following the app-start with shadow-cljs, so Calva will report <code>Jack-in done.</code> in the <code>Calva says</code> output before shadow-cljs is actually done building the app. If you open the app page at that stage, you will see a message to “Please run <code>lein shadow watch app</code>”. Rest assured that <em>this is already underway.</em> Follow the Jack-in process in the <em>Terminal</em> tab in VS Code for the message that the app is built, <em>then</em> reload the app page in the web browser.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently Calva has troubles following the app-start with shadow-cljs, so Calva will report <code>Jack-in done.</code> in the output window before shadow-cljs is actually done building the app. If you open the app page at that stage, you will see a message to “Please run <code>lein shadow watch app</code>”. Rest assured that <em>this is already underway.</em> Follow the Jack-in process in the <em>Terminal</em> tab in VS Code for the message that the app is built, <em>then</em> reload the app page in the web browser.</p>
+</div>
 <h2 id="server-only">Server Only</h2>
 <p>The workflow here is really just: Jack-in and start hacking. However, the first time it will involve these steps:</p>
 <ol>
@@ -822,7 +823,7 @@
 <li>This creates the folder <code>my-luminus-server</code>. Open it in VS Code:
     <code>sh
     $ code my-luminus-server</code></li>
-<li>Use the Calva command <strong>Start a Project REPL and Connect (aka Jack-in)</strong>: <code>ctrl+alt+c ctrl+alt+j</code> and wait for the <strong>Calva says</strong> output to say <code>Jack-in done.</code></li>
+<li>Use the Calva command <strong>Start a Project REPL and Connect (aka Jack-in)</strong>: <code>ctrl+alt+c ctrl+alt+j</code> and wait until you see <code>Jack-in done.</code> in the output window.</li>
 <li>Open <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in your web browser and start hacking.</li>
 </ol>
 <h2 id="server-figwheel">Server + Figwheel</h2>
@@ -837,15 +838,15 @@
 <li>Use the Calva command <strong>Start a Project REPL and Connect (aka Jack-in)</strong>: <code>ctrl+alt+c ctrl+alt+j</code>, select <strong>Server + Client - my-fw</strong> in the <em>Project type</em> picker menu, and wait for the web app to pop open in your web browser.</li>
 <li>Start hacking.</li>
 </ol>
-<p>If you rather open the web app yourself, open <code>.vscode/settings.json</code> and change <code>"shouldOpenUrl"</code> to <code>false</code> in the pre-configured Calva connect sequence. Calva will then print the URL <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in the output, so that you can click it open.</p>
+<p>If you prefer to open the web app yourself, open <code>.vscode/settings.json</code> and change <code>"shouldOpenUrl"</code> to <code>false</code> in the pre-configured Calva connect sequence. Calva will then print the URL <a href="http://127.0.0.1:3000">127.0.0.1:3000</a> in the output, so that you can click it open.</p>
 <h2 id="etcetera">Etcetera</h2>
-<p>You will have three Calva <em>Custom Command Snippets</em> configured. Invoke them by issuing the <strong>Run Custom REPL Command</strong>, <code>ctrl+alt+c .</code> (that's a dot). The commands control the Luminus server:</p>
+<p>You will have three Calva <em>Custom Command Snippets</em> configured. Invoke them by issuing the <strong>Run Custom REPL Command</strong>, <code>ctrl+alt+c .</code> (that's a dot). These commands control the Luminus server:</p>
 <ol>
 <li><code>Start &lt;project&gt; Server</code></li>
 <li><code>Stop &lt;project&gt; Server</code></li>
 <li><code>Restart &lt;project&gt; Server</code></li>
 </ol>
-<p>When used, Calva will open its REPL window and excute the command, if it is not already opened. You can close this window if you prefer to use the REPL directly from the Clojure files.</p>
+<p>When used, Calva will open its REPL window and execute the command, if it is not already opened. You can close this window if you prefer to use the REPL directly from the Clojure files.</p>
 <p>Calva also opens the REPL window, and starts the Luminus server, as part of the Jack-in process.</p>
                 
               
@@ -880,13 +881,13 @@
           </a>
         
         
-          <a href="../re-frame-template/" title="How to Use Calva with the re-frame template" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../re-frame-template/" title="How to Use Calva With the re-frame Template" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                How to Use Calva with the re-frame template
+                How to Use Calva With the re-frame Template
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

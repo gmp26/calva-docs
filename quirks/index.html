@@ -535,8 +535,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../re-frame-template/" title="How to Use Calva with the re-frame template" class="md-nav__link">
-      How to Use Calva with the re-frame template
+    <a href="../re-frame-template/" title="How to Use Calva With the re-frame Template" class="md-nav__link">
+      How to Use Calva With the re-frame Template
     </a>
   </li>
 
@@ -579,8 +579,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workspace-layouts/" title="Workspace layouts" class="md-nav__link">
-      Workspace layouts
+    <a href="../workspace-layouts/" title="Workspace Layouts" class="md-nav__link">
+      Workspace Layouts
     </a>
   </li>
 
@@ -655,7 +655,7 @@
       
         <li class="md-nav__item">
   <a href="#command-not-found-errors-on-jack-in" class="md-nav__link">
-    ”Command not found” errors on Jack-in
+    ”Command not found” Errors on Jack-in
   </a>
   
 </li>
@@ -788,7 +788,7 @@
       
         <li class="md-nav__item">
   <a href="#command-not-found-errors-on-jack-in" class="md-nav__link">
-    ”Command not found” errors on Jack-in
+    ”Command not found” Errors on Jack-in
   </a>
   
 </li>
@@ -829,18 +829,18 @@
 <p>Calva defaults to formatting as you type. If you use Parinfer this creates a conflict, since it auto-indents your code. If you want to use Parinfer you'll have to tell Calva not to do auto-formatting by disabling <code>calva.fmt.formatAsYouType</code>.</p>
 <p>However, with VS Code and Calva it is probably better to learn to use <a href="../paredit/">Paredit</a>'s <strong>slurp</strong> and <strong>barf</strong> and generally use Calva's automatic formatting.</p>
 <h2 id="macos-and-the-slurp-and-barf-keyboard-shortcuts">MacOS and the Slurp and Barf Keyboard Shortcuts</h2>
-<p>To make slurping and barfing forward really easy to perform they are bound to <code>ctrl+right</code> and <code>ctrl+left</code>, respectively. However on MacOS those shortcuts are sometimes bound by Mission Control, causing the Calva shortcuts to not work. One way to solve it is to disable the shortcuts in <em>System Preferences -&gt; Keyboard -&gt; Shortcuts</em>:</p>
+<p>To make slurping and barfing forward really easy to perform they are bound to <code>ctrl+right</code> and <code>ctrl+left</code>, respectively. However, on MacOS those shortcuts are sometimes bound by Mission Control, causing the Calva shortcuts to not work. One way to solve it is to disable the shortcuts in <em>System Preferences -&gt; Keyboard -&gt; Shortcuts</em>:</p>
 <p><img alt="Disable Mission Control Shortcuts" src="../images/howto/mission-control-shortcuts.gif" /></p>
 <h2 id="calva-and-the-vim-extension">Calva and the VIM Extension</h2>
 <p>See <a href="../vim/">Using Calva with the VIM Extension</a>.</p>
-<h2 id="command-not-found-errors-on-jack-in">”Command not found” errors on Jack-in</h2>
-<p><a href="../jack-in-guide/">Jack-in</a> starts by spawning of a command in the shell. You will need the commands used installed on your computer:</p>
+<h2 id="command-not-found-errors-on-jack-in">”Command not found” Errors on Jack-in</h2>
+<p><a href="../jack-in-guide/">Jack-in</a> starts by running a command in a new terminal. You will need the commands used installed on your computer:</p>
 <ul>
 <li><code>clojure</code> for tools.deps/Clojure CLI</li>
 <li><code>lein</code> for Leiningen</li>
 <li><code>npx</code> for shadow-cljs</li>
 </ul>
-<p>Also, in some circumstances VS Code is not spawned from a shell with the environment variables, expecially <code>$PATH</code>, which might mean that even though you have the tools installed, they are not found when VS Code/Calva tries to execute them. To fix this you will need to do one of these two things:</p>
+<p>Also, in some circumstances VS Code is not spawned from a shell with the environment variables, especially <code>$PATH</code>, which might mean that even though you have the tools installed, they are not found when VS Code/Calva tries to execute them. To fix this you will need to do one of these two things:</p>
 <ol>
 <li>Figure out from where VS Code is spawned, and make sure the <code>$PATH</code> there includes the directoy with the needed binary.</li>
 <li>Start VS Code from a terminal where the <code>$PATH</code> is correctly configured. (Using the <code>code</code> commmand.)</li>
@@ -866,7 +866,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../workspace-layouts/" title="Workspace layouts" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../workspace-layouts/" title="Workspace Layouts" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -875,7 +875,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Workspace layouts
+                Workspace Layouts
               </div>
             </div>
           </a>
