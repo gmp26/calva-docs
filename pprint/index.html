@@ -427,6 +427,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pprint-is-not-working-for-clojurescript" class="md-nav__link">
+    pprint is not working for ClojureScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -763,6 +783,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pprint-is-not-working-for-clojurescript" class="md-nav__link">
+    pprint is not working for ClojureScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -885,6 +925,9 @@
 <p>Then why not always do it client side? It turns out that on the client side there are also things going on. Calva gets the results back as a string and therefore it needs to first be parsed back to <a href="https://github.com/edn-format/edn">EDN</a>, before it can be pretty printed by <code>zprint</code>. And – here's the catch – all results are not valid EDN and therefore can't be pretty printed by <code>zprint</code>. Datomic transaction results are one example.</p>
 <h3 id="need-more-configurability">Need More Configurability?</h3>
 <p>The current options are limited, because our time developing Calva is limited. But <code>cider-nrepl</code> really allows for fully configurable pretty printing, so it is within reach. Please feel invited to give us feedback on what you would want to configure for the printing of results. File issues and/or chat us up in #calva in the Clojurians slack.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<h4 id="pprint-is-not-working-for-clojurescript">pprint is not working for ClojureScript</h4>
+<p>If you're using shadow-cljs and not using the <code>calva</code> pprint engine, you need to set <code>:repl-pprint</code> to <code>true</code> in <code>:devtools</code> of your shadow-cljs build. See <a href="https://shadow-cljs.github.io/docs/UsersGuide.html#_repl_3">here</a> for more details.</p>
 <p>Enjoy Prettiful Printing! ❤️</p>
                 
               
