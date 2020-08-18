@@ -268,10 +268,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Features
@@ -365,62 +367,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../linting/" title="Linting" class="md-nav__link">
-      Linting
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      Customizing Calva
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Customizing Calva" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Customizing Calva
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../customizing/" title="Customizing Calva" class="md-nav__link">
-      Customizing Calva
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -490,8 +436,32 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linting/" title="Linting" class="md-nav__link">
+      Linting
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customizing/" title="Customizing Calva" class="md-nav__link">
+      Customizing Calva
+    </a>
   </li>
 
     
@@ -787,7 +757,7 @@
 <li><code>shouldOpenUrl</code>: Choose if Calva should automatically open the URL for you or not.</li>
 <li><code>connectCode</code>: (required) Clojure code to be evaluated to convert the REPL to a CLJS REPL that Calva can use to connect to the application. (For some setups this could also conditionally start the CLJS REPL. If so: <code>startCode</code> should be omitted.)</li>
 <li><code>isConnectedRegExp</code>: (required) A regular expression which, when matched in the <code>stdout</code> from the <code>connectCode</code> evaluation, will tell Calva that the application is connected. The default is <code>To quit, type: :cljs/quit</code> and you should leave it at that unless you know it won't work.</li>
-<li><code>printThisLineRegExp</code>: regular expression which, when matched in the <code>stdout</code> from any code evaluations in the <code>cljsType</code>, will make the matched text be printed to the <strong>Calva says</strong> Output channel.</li>
+<li><code>printThisLineRegExp</code>: regular expression which, when matched in the <code>stdout</code> from any code evaluations in the <code>cljsType</code>, will make the matched text be printed to the <a href="../output/">Output window</a>.</li>
 <li><code>buildsRequired</code>: Boolean. If the repl type requires that builds are started in order to connect to them, set this to true.</li>
 </ul>
 </li>
@@ -889,7 +859,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../customizing/" title="Customizing Calva" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../pprint/" title="Pretty Printing" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -898,7 +868,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Customizing Calva
+                Pretty Printing
               </div>
             </div>
           </a>

@@ -466,60 +466,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../linting/" title="Linting" class="md-nav__link">
-      Linting
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Customizing Calva
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Customizing Calva" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Customizing Calva
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../customizing/" title="Customizing Calva" class="md-nav__link">
-      Customizing Calva
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../connect-sequences/" title="REPL Jack-in and Connection Sequences" class="md-nav__link">
       REPL Jack-in and Connection Sequences
     </a>
@@ -538,8 +484,32 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linting/" title="Linting" class="md-nav__link">
+      Linting
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customizing/" title="Customizing Calva" class="md-nav__link">
+      Customizing Calva
+    </a>
   </li>
 
     
@@ -982,6 +952,7 @@
 </tbody>
 </table>
 <h3 id="selecting">Selecting</h3>
+<p>Most of these commands are selecting ”versions” of the navigation commands above. Repeated use will grow the current selection step by step.</p>
 <table>
 <thead>
 <tr>
@@ -1006,18 +977,6 @@
 <td><strong>Select Top Level Form</strong></td>
 <td>Top level in a structural sence. Typically where your<code>(def ...)</code>/<code>(defn ...)</code> type forms. Please note that<code>(comment ...)</code> forms create a new top level. <br> <img alt="" src="../images/paredit/select-top-level-form.gif" /></td>
 </tr>
-</tbody>
-</table>
-<p>The selecting ”versions” of the navigation commands above. They will all grow the current selection as far as the <strong>Shrink Selection</strong> command is concerned.</p>
-<table>
-<thead>
-<tr>
-<th>Default keybinding</th>
-<th>Action</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td><code>ctrl+shift+alt+right</code></td>
 <td><strong>Select Forward Sexp</strong></td>
@@ -1060,7 +1019,10 @@
 </tr>
 </tbody>
 </table>
-<p>(Earlier versions of Calva had commands for copying, cutting and deleting that corresponded to all movements. This has now been replaced with this selection commands, and you can choose to copy/cut/delete once you have the selection.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Many implementations of Paredit have commands for copying/cutting while deleting. In Calva there are instead the above selection commands, and you can choose to copy/cut once you have the selection.</p>
 <h3 id="editing">Editing</h3>
 <table>
 <thead>
